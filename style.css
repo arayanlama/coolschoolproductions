@@ -42,3 +42,10 @@ radial-gradient(circle at 82% 30%,rgba(105,105,112,.08),transparent 28%),
 .submission-copy{font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#c4c0b7}
 .footer-blessing{position:relative;z-index:1;padding:6vw 3vw;border-top:1px solid rgba(170,170,178,.2);font-family:Georgia,'Times New Roman',serif;font-size:clamp(30px,4vw,60px);letter-spacing:-.04em;color:#ddd9d0}
 @media(max-width:760px){.blessing{min-height:34vh;padding:14vw 5vw;display:block}.blessing p{font-size:12vw}.blessing span{display:block;margin-top:50px}.intro{font-size:17px!important}.footer-blessing{padding:14vw 5vw;font-size:10vw}}
+
+/* typographic logo based on the selected Cool School identity */
+.typelogo{display:flex;flex-direction:column;align-items:center;color:#111;background:#eeeae1;padding:72px 62px;min-width:min(82%,620px)}
+.typelogo span{font-family:Georgia,'Times New Roman',serif;font-size:clamp(50px,6vw,92px);line-height:.9;letter-spacing:-.065em;white-space:nowrap}
+.typelogo small{font-family:Arial,sans-serif;font-size:12px;font-weight:400;letter-spacing:.62em;margin-top:26px;padding-left:.62em}
+.hero-mark{background:#eeeae1}.hero-mark:before{border-color:rgba(0,0,0,.06)}.logo-caption{color:#77736c}
+@media(max-width:760px){.typelogo{padding:48px 24px;min-width:94%}.typelogo span{font-size:13vw}.typelogo small{font-size:9px;letter-spacing:.48em;margin-top:18px}}
