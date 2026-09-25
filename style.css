@@ -20,3 +20,25 @@ radial-gradient(circle at 82% 30%,rgba(105,105,112,.08),transparent 28%),
 .showcase-hero{background:radial-gradient(circle at 85% 30%,rgba(95,95,102,.06),transparent 30%)}.showcase-grid .project:nth-child(3n){border-right:0}
 @media(max-width:980px) and (min-width:761px){.hero{grid-template-columns:.9fr 1.1fr}.hero h1{font-size:7vw}.grid,.showcase-grid{grid-template-columns:repeat(2,1fr)}.project:nth-child(2n){border-right:0}}
 @media(max-width:760px){header{padding-left:5vw;padding-right:5vw}.chapter-label span:first-child{width:22px;height:22px}.hero{min-height:auto}.hero-mark{min-height:46vh}.logo-stage{padding:22px}.hero-copy{min-height:auto;padding-top:14vw;padding-bottom:14vw}.hero h1{font-size:13vw}.section-head{padding:18px 5vw}.grid{padding-bottom:0}.project{padding:5vw}.project h3{font-size:15px}.submission-inner{padding-top:20vw;padding-bottom:20vw}.submission-copy{font-size:15px}.email-link{word-break:break-word;line-height:1.35}.footer-top{padding-top:14vw}.site-footer:before{inset:8px}}
+
+/* Cool School — warm monochrome editorial direction */
+:root{--paper:#eeeae1;--ink:#11110f}
+.hero-mark{background:#0a0a0a}
+.hero-mark:before{inset:20px;border-color:rgba(255,255,255,.08)}
+.logo-stage{border:0;background:transparent;box-shadow:none;backdrop-filter:none}
+.hero-copy{background:var(--paper);color:var(--ink)}
+.hero-copy>p:first-child{color:#68665f}
+.hero h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.055em;line-height:.92;text-transform:none}
+.intro{font-family:Georgia,'Times New Roman',serif;color:#555149!important;font-size:18px!important;max-width:570px}
+.hero-copy .arrow{color:#34332f;border-bottom-color:#aaa69d}
+.blessing{min-height:42vh;background:var(--paper);color:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:6vw 4vw;border-top:1px solid #c8c3b9}
+.blessing p{font-family:Georgia,'Times New Roman',serif;font-size:clamp(38px,5.5vw,82px);line-height:1;margin:0;letter-spacing:-.045em}
+.blessing span{font-size:9px;letter-spacing:.16em;align-self:flex-end;color:#77736c}
+.blessing-dark{background:#0a0a0a;color:#eeeae1;border-color:#242424}
+.blessing-dark span{color:#777}
+.frame.media img{filter:grayscale(100%) brightness(.7) contrast(1.12)}
+.project:hover .frame.media img{filter:grayscale(100%) brightness(.78) contrast(1.08)}
+.submission-inner h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;text-transform:none;letter-spacing:-.055em}
+.submission-copy{font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#c4c0b7}
+.footer-blessing{position:relative;z-index:1;padding:6vw 3vw;border-top:1px solid rgba(170,170,178,.2);font-family:Georgia,'Times New Roman',serif;font-size:clamp(30px,4vw,60px);letter-spacing:-.04em;color:#ddd9d0}
+@media(max-width:760px){.blessing{min-height:34vh;padding:14vw 5vw;display:block}.blessing p{font-size:12vw}.blessing span{display:block;margin-top:50px}.intro{font-size:17px!important}.footer-blessing{padding:14vw 5vw;font-size:10vw}}
