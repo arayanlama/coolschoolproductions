@@ -48,3 +48,14 @@ if(document.querySelector('.vinyl-video iframe')){
   yt.src='https://www.youtube.com/iframe_api';
   document.head.appendChild(yt);
 }
+
+const vinylTrack=document.querySelector('.vinyl-track');
+if(vinylTrack){
+ const vinylSlides=[...vinylTrack.querySelectorAll('.vinyl-piece')],dots=[...document.querySelectorAll('.vinyl-dots button')];
+ const go=i=>{const n=Math.max(0,Math.min(vinylSlides.length-1,i));vinylTrack.scrollTo({left:vinylSlides[n].offsetLeft,behavior:'smooth'})};
+ const current=()=>vinylSlides.reduce((best,s,i)=>Math.abs(vinylTrack.scrollLeft-s.offsetLeft)<Math.abs(vinylTrack.scrollLeft-vinylSlides[best].offsetLeft)?i:best,0);
+ document.querySelector('.vinyl-prev')?.addEventListener('click',()=>go(current()-1));
+ document.querySelector('.vinyl-next')?.addEventListener('click',()=>go(current()+1));
+ dots.forEach((d,i)=>d.addEventListener('click',()=>go(i)));
+ let raf;vinylTrack.addEventListener('scroll',()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{const n=current();dots.forEach((d,i)=>d.classList.toggle('active',i===n))})},{passive:true});
+}
