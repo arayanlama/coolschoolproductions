@@ -36,14 +36,14 @@ if(videoTrack){
 }
 
 function onYouTubeIframeAPIReady(){
-  document.querySelectorAll('.vinyl-video iframe').forEach(frame=>{
-    const disc=frame.closest('.vinyl-disc');
+  document.querySelectorAll('.vinyl-video-panel iframe').forEach(frame=>{
+    const disc=frame.closest('.vinyl-piece').querySelector('.vinyl-disc');
     new YT.Player(frame,{events:{onStateChange:e=>{
       disc.classList.toggle('is-playing',e.data===YT.PlayerState.PLAYING);
     }}});
   });
 }
-if(document.querySelector('.vinyl-video iframe')){
+if(document.querySelector('.vinyl-video-panel iframe')){
   const yt=document.createElement('script');
   yt.src='https://www.youtube.com/iframe_api';
   document.head.appendChild(yt);
