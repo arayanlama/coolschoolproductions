@@ -1,7 +1,7 @@
 const menu=document.querySelector('#menu'),nav=document.querySelector('nav');
 menu.addEventListener('click',()=>nav.classList.toggle('open'));
 document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-document.querySelector('#year').textContent=new Date().getFullYear();
+const year=document.querySelector('#year');if(year)year.textContent=new Date().getFullYear();
 
 const heroTrack=document.querySelector('.hero-track');
 if(heroTrack){
@@ -21,4 +21,16 @@ if(heroTrack){
   heroTrack.addEventListener('mouseenter',()=>clearInterval(timer));
   heroTrack.addEventListener('mouseleave',start);
   start();
+}
+
+const videoTrack=document.querySelector('.video-track');
+if(videoTrack){
+  const videoSlides=[...videoTrack.querySelectorAll('.video-slide')];
+  const move=dir=>{
+    const current=videoSlides.reduce((best,slide,i)=>Math.abs(videoTrack.scrollLeft-slide.offsetLeft)<Math.abs(videoTrack.scrollLeft-videoSlides[best].offsetLeft)?i:best,0);
+    const next=Math.max(0,Math.min(videoSlides.length-1,current+dir));
+    videoTrack.scrollTo({left:videoSlides[next].offsetLeft-videoTrack.offsetLeft,behavior:'smooth'});
+  };
+  document.querySelector('.gallery-prev')?.addEventListener('click',()=>move(-1));
+  document.querySelector('.gallery-next')?.addEventListener('click',()=>move(1));
 }
