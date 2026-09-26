@@ -68,3 +68,14 @@
 .footer-links{display:flex;gap:26px}
 .footer-links a{transition:opacity .2s}.footer-links a:hover{opacity:.5}
 @media(max-width:760px){.site-footer{padding:16vw 6vw 6vw;min-height:48vh}.footer-top{flex-direction:column}.footer-brand{font-size:15vw}.footer-top>p{text-align:left}.footer-bottom{margin-top:18vw;align-items:flex-start;gap:25px;flex-direction:column}.footer-links{gap:18px;flex-wrap:wrap}}
+
+/* Label-level precision */
+header{border-bottom:1px solid rgba(20,20,18,.14)}
+nav{gap:28px}nav a{font-size:7px;letter-spacing:.19em}
+.opening-message{padding-left:5vw;padding-right:5vw}
+.opening-message .prayer{max-width:490px}
+.showcase-hint span{letter-spacing:.2em}
+.site-footer{min-height:36vh;padding-top:6vw}
+.footer-brand{max-width:700px}
+.footer-top>p{letter-spacing:.2em}
+@media(max-width:760px){nav{gap:20px}.site-footer{min-height:42vh}}
