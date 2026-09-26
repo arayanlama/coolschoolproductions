@@ -73,3 +73,11 @@ musicTabs.forEach(t=>t.addEventListener('click',()=>{musicTabs.forEach(x=>x.clas
 document.querySelector('.audio-prev')?.addEventListener('click',()=>loadAudio(audioIndex-1));document.querySelector('.audio-next')?.addEventListener('click',()=>loadAudio(audioIndex+1));
 audioPlay?.addEventListener('click',()=>{if(!audioPlayer)return;const p=audioPlayer.getPlayerState()===YT.PlayerState.PLAYING;p?audioPlayer.pauseVideo():audioPlayer.playVideo()});
 audioRange?.addEventListener('input',()=>{if(audioPlayer?.getDuration)audioPlayer.seekTo(audioPlayer.getDuration()*audioRange.value/1000,true)});
+
+audioRecord?.addEventListener('click',()=>audioPlay?.click());
+document.addEventListener('keydown',e=>{
+ if(!musicSection||!musicSection.matches(':hover'))return;
+ if(e.key==='ArrowLeft') musicSection.classList.contains('vinyl-mode')?document.querySelector('.audio-prev')?.click():document.querySelector('.vinyl-prev')?.click();
+ if(e.key==='ArrowRight') musicSection.classList.contains('vinyl-mode')?document.querySelector('.audio-next')?.click():document.querySelector('.vinyl-next')?.click();
+ if(e.code==='Space'&&musicSection.classList.contains('vinyl-mode')){e.preventDefault();audioPlay?.click()}
+});
