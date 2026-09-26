@@ -506,3 +506,14 @@ button:focus-visible,a:focus-visible,.artist-link:focus-visible,.audio-record:fo
 .submission-simple-page{background:var(--cream);color:var(--black)}
 .submission-simple-page section{min-height:calc(100svh - 68px);display:flex;flex-direction:column;justify-content:center;padding:10vw 4vw}
 @media(max-width:700px){.submit-simple{min-height:62svh;padding:20vw 6vw}.submit-simple h2,.submission-simple-page h1{font-size:20vw;margin:28px 0 45px}.submission-simple-page section{min-height:calc(100svh - 60px);padding:20vw 6vw}}
+
+/* Homepage contact */
+.home-contact{background:#0b0b0a;color:#eee8dc;padding:clamp(70px,9vw,130px) 4vw}
+.home-contact>span{display:block;font-size:7px;letter-spacing:.2em;color:#77736b;margin-bottom:clamp(45px,7vw,90px)}
+.home-contact-row{display:grid;grid-template-columns:1fr auto;gap:8vw;align-items:end}
+.home-contact h2{font-family:Georgia,serif;font-size:clamp(70px,10vw,150px);font-weight:400;line-height:.8;letter-spacing:-.075em;margin:0}
+.home-contact-links{display:flex;flex-direction:column;min-width:min(360px,30vw)}
+.home-contact-links a{padding:16px 0;border-bottom:1px solid #292927;font-size:8px;letter-spacing:.17em;transition:padding .25s var(--ease),opacity .2s}
+.home-contact-links a:first-child{border-top:1px solid #292927}
+.home-contact-links a:hover{padding-left:8px;opacity:.65}
+@media(max-width:700px){.home-contact{padding:18vw 6vw}.home-contact-row{grid-template-columns:1fr;gap:12vw}.home-contact h2{font-size:18vw}.home-contact-links{min-width:0;width:100%}}
