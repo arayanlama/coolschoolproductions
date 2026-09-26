@@ -83,3 +83,13 @@ document.addEventListener('keydown',e=>{
 });
 
 if(vinylAtmosphere)vinylAtmosphere.style.backgroundImage=`url('https://i.ytimg.com/vi/${audioIds[0]}/maxresdefault.jpg')`;
+
+document.querySelectorAll('.artist-link[data-track]').forEach(card=>{
+ const openArtistRecord=()=>{
+  const i=Number(card.dataset.track);
+  loadAudio(i);
+  document.querySelector('#discover')?.scrollIntoView({behavior:'smooth',block:'start'});
+ };
+ card.addEventListener('click',openArtistRecord);
+ card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openArtistRecord()}});
+});
