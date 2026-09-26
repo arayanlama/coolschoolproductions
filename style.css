@@ -38,3 +38,12 @@
 .video-meta p{grid-column:2;text-align:left;margin:5px 0 0;font-size:7px;line-height:1.5}
 @media(min-width:761px){.gallery-nav span{display:none}}
 @media(max-width:760px){.video-gallery{padding:4vw 0 14vw}.gallery-head{padding:16vw 6vw 7vw}.gallery-head h2{font-size:12vw}.video-track{display:flex;max-width:none;gap:12px;padding:0 6vw 5vw;overflow-x:auto;scroll-snap-type:x mandatory}.video-slide{flex:0 0 82vw;scroll-snap-align:start}.video-meta h3{font-size:20px}.gallery-nav button{width:34px;height:34px}}
+
+/* Full-bleed Discover */
+.discover-full{position:relative;background:#0b0b0a;color:var(--cream);padding:0;min-height:100vh;border:0;overflow:hidden}
+.discover-full .discover-label{position:absolute;z-index:5;top:20px;left:24px;font-size:8px;letter-spacing:.2em;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.45);pointer-events:none}
+.discover-full .video-track{max-width:none;width:100%;height:100vh;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#0b0b0a;overflow:hidden}
+.discover-full .video-slide{min-width:0;height:100%;margin:0}
+.discover-full .video-frame{width:100%;height:100%;aspect-ratio:auto;border-radius:0;background:#000}
+.discover-full .video-frame iframe{width:100%;height:100%;display:block}
+@media(max-width:760px){.discover-full{min-height:100svh}.discover-full .discover-label{top:16px;left:16px}.discover-full .video-track{height:100svh;display:flex;gap:1px;padding:0;overflow-x:auto;scroll-snap-type:x mandatory}.discover-full .video-slide{flex:0 0 100vw;height:100svh;scroll-snap-align:start}.discover-full .video-frame{height:100%}}
