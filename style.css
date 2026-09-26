@@ -201,3 +201,8 @@ nav{gap:28px}nav a{font-size:7px;letter-spacing:.19em}
  .vinyl-project .vinyl-shell{width:min(44vw,190px)}
  .vinyl-meta{width:94vw;margin-top:12px}
 }
+
+/* Thumbnail record labels */
+.vinyl-label.vinyl-art{width:42%;height:42%;background-position:center;background-size:cover;background-repeat:no-repeat;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),0 0 0 2px #090806}
+.vinyl-label.vinyl-art:after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.2));pointer-events:none}
+.vinyl-catalogue{position:absolute;z-index:2;left:50%;bottom:10%;transform:translateX(-50%);padding:3px 6px;background:rgba(15,13,10,.68);color:#eee3cd!important;font-family:Arial,sans-serif!important;font-style:normal!important;font-size:6px!important;letter-spacing:.16em!important;white-space:nowrap}
