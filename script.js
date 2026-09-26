@@ -34,3 +34,17 @@ if(videoTrack){
   document.querySelector('.gallery-prev')?.addEventListener('click',()=>move(-1));
   document.querySelector('.gallery-next')?.addEventListener('click',()=>move(1));
 }
+
+function onYouTubeIframeAPIReady(){
+  document.querySelectorAll('.vinyl-video iframe').forEach(frame=>{
+    const disc=frame.closest('.vinyl-disc');
+    new YT.Player(frame,{events:{onStateChange:e=>{
+      disc.classList.toggle('is-playing',e.data===YT.PlayerState.PLAYING);
+    }}});
+  });
+}
+if(document.querySelector('.vinyl-video iframe')){
+  const yt=document.createElement('script');
+  yt.src='https://www.youtube.com/iframe_api';
+  document.head.appendChild(yt);
+}
