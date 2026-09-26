@@ -113,3 +113,20 @@ nav{gap:28px}nav a{font-size:7px;letter-spacing:.19em}
 .vinyl-meta{width:min(64vh,620px);max-width:72vw;margin-top:18px}
 .vinyl-discover .discover-label{z-index:10}
 @media(max-width:760px){.vinyl-discover{height:88svh;min-height:620px}.vinyl-track{height:100%;display:flex}.vinyl-piece{flex:0 0 100vw;width:100vw;height:100%;min-height:0;padding:10vh 6vw 5vh}.vinyl-shell{width:min(74vw,52vh);max-width:none}.vinyl-meta{width:min(74vw,52vh);max-width:none}}
+
+/* Tactile Discover interaction */
+.vinyl-shell{transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .45s ease;cursor:pointer}
+.vinyl-piece:hover .vinyl-shell{transform:scale(1.025);filter:brightness(1.06)}
+.vinyl-piece:focus-within .vinyl-shell{transform:scale(1.015)}
+.vinyl-video{transition:box-shadow .3s ease,transform .3s ease}
+.vinyl-piece:hover .vinyl-video{box-shadow:0 0 0 3px #080808,0 0 0 5px rgba(255,255,255,.28)}
+.vinyl-play{position:absolute;z-index:8;left:50%;top:50%;width:54px;height:54px;display:grid;place-items:center;border-radius:50%;transform:translate(-50%,-50%);background:rgba(245,242,235,.92);color:#090909;font-family:Arial,sans-serif;font-size:17px;padding-left:3px;box-shadow:0 8px 28px rgba(0,0,0,.28);pointer-events:none;transition:transform .25s ease,opacity .25s ease}
+.vinyl-piece:hover .vinyl-play{transform:translate(-50%,-50%) scale(1.08)}
+.vinyl-disc.is-playing .vinyl-play{opacity:0}
+.vinyl-controls{position:absolute;z-index:12;left:50%;bottom:24px;transform:translateX(-50%);display:flex;align-items:center;gap:14px;padding:7px 9px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(10,10,10,.58);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.vinyl-controls>button{width:38px;height:38px;border:0;border-radius:50%;background:transparent;color:#f2eee6;font-size:16px;cursor:pointer;transition:background .2s,transform .2s}
+.vinyl-controls>button:hover{background:rgba(255,255,255,.12);transform:scale(1.05)}
+.vinyl-dots{display:flex;gap:7px;align-items:center;padding:0 3px}
+.vinyl-dots button{width:6px;height:6px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:width .25s,background .25s,border-radius .25s}
+.vinyl-dots button.active{width:20px;border-radius:999px;background:#f2eee6}
+@media(max-width:760px){.vinyl-controls{bottom:14px}.vinyl-play{width:48px;height:48px}.vinyl-piece:hover .vinyl-shell{transform:none}}
