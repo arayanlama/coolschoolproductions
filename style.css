@@ -241,3 +241,11 @@ nav{gap:28px}nav a{font-size:7px;letter-spacing:.19em}
 .audio-track-count:before{content:"SIDE A · ";color:#5e5547}
 @media(max-width:760px){.music-tabs{top:42px}.vinyl-video-panel:after{display:none}.audio-deck:before{top:8px}}
 @media(prefers-reduced-motion:reduce){.vinyl-disc.is-playing,.audio-record.playing{animation:none}.vinyl-track,.vinyl-audio-view,.audio-record,.vinyl-shell{transition:none}}
+
+/* Track-reactive vinyl atmosphere */
+.vinyl-atmosphere{position:absolute;z-index:1;inset:-7%;opacity:0;pointer-events:none;background-position:center;background-size:cover;filter:blur(42px) saturate(.78) brightness(.34);transform:scale(1.08);transition:opacity .7s ease,background-image .7s ease}
+.vinyl-atmosphere:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,13,9,.72),rgba(16,13,9,.38) 48%,rgba(16,13,9,.66)),linear-gradient(180deg,rgba(16,13,9,.42),rgba(16,13,9,.68))}
+.vinyl-discover.vinyl-mode .vinyl-atmosphere{opacity:.72}
+.vinyl-discover.vinyl-mode:before{opacity:.12}
+.vinyl-audio-view{z-index:3}
+@media(max-width:760px){.vinyl-atmosphere{filter:blur(32px) saturate(.72) brightness(.3)}.vinyl-discover.vinyl-mode .vinyl-atmosphere{opacity:.62}}
