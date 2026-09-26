@@ -218,3 +218,26 @@ nav{gap:28px}nav a{font-size:7px;letter-spacing:.19em}
 .audio-progress{display:grid;grid-template-columns:34px 1fr 34px;gap:12px;align-items:center}.audio-time{font-size:7px;color:#8f8169;font-variant-numeric:tabular-nums}.audio-range{width:100%;accent-color:#d8c7a5;cursor:pointer}
 .audio-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:30px}.audio-controls button{border:1px solid rgba(216,199,165,.25);background:transparent;color:#dfd1b5;border-radius:50%;width:42px;height:42px;cursor:pointer}.audio-controls .audio-play{width:62px;height:62px;background:#d8c7a5;color:#17140f;border:0;font-size:17px;padding-left:4px}.audio-track-count{text-align:center;margin-top:18px;font-size:7px;letter-spacing:.18em;color:#776b58}
 @media(max-width:760px){.music-tabs{top:46px}.vinyl-audio-view{width:90vw;grid-template-columns:1fr;gap:28px;align-content:center}.audio-record{width:min(62vw,270px)}.audio-deck{padding:20px 0}.audio-deck h2{font-size:38px;margin:9px 0 22px}}
+
+/* Refined two-mode Music experience */
+.music-tabs{top:18px;padding:4px;gap:2px;box-shadow:0 10px 35px rgba(0,0,0,.22)}
+.music-tab{min-width:76px;transition:background .25s ease,color .25s ease,transform .25s ease}
+.music-tab:hover{color:#d8c7a5}.music-tab.active:hover{color:#17140f}
+.vinyl-track,.vinyl-audio-view{transition:opacity .35s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
+.vinyl-discover:not(.vinyl-mode) .vinyl-track{opacity:1;transform:translateY(0)}
+.vinyl-discover.vinyl-mode .vinyl-audio-view{animation:musicViewIn .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes musicViewIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.vinyl-video-panel:after{content:"PLAY FILM";position:absolute;right:12px;bottom:12px;z-index:3;padding:7px 9px;background:rgba(20,17,12,.78);color:#ddd0b5;font-size:6px;letter-spacing:.18em;pointer-events:none;opacity:.72;transition:opacity .25s,transform .25s}
+.vinyl-video-panel:hover:after{opacity:1;transform:translateY(-2px)}
+.audio-record{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease;cursor:pointer}
+.audio-record:hover{transform:scale(1.025);box-shadow:0 30px 85px rgba(0,0,0,.58)}
+.audio-record.playing{box-shadow:0 30px 90px rgba(0,0,0,.62),0 0 0 1px rgba(216,199,165,.12)}
+.audio-deck{position:relative}
+.audio-deck:before{content:"33⅓ RPM";position:absolute;right:0;top:14px;font-size:6px;letter-spacing:.18em;color:#655a48}
+.audio-range{-webkit-appearance:none;appearance:none;height:2px;background:rgba(216,199,165,.2);outline:none;border-radius:2px}
+.audio-range::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:#d8c7a5;box-shadow:0 0 0 4px rgba(216,199,165,.08);cursor:pointer}
+.audio-range::-moz-range-thumb{width:12px;height:12px;border:0;border-radius:50%;background:#d8c7a5;cursor:pointer}
+.audio-controls button{transition:transform .2s ease,background .2s ease,border-color .2s ease}.audio-controls button:hover{transform:scale(1.07);background:rgba(216,199,165,.08);border-color:rgba(216,199,165,.5)}.audio-controls .audio-play:hover{background:#eadcbc;transform:scale(1.06)}
+.audio-track-count:before{content:"SIDE A · ";color:#5e5547}
+@media(max-width:760px){.music-tabs{top:42px}.vinyl-video-panel:after{display:none}.audio-deck:before{top:8px}}
+@media(prefers-reduced-motion:reduce){.vinyl-disc.is-playing,.audio-record.playing{animation:none}.vinyl-track,.vinyl-audio-view,.audio-record,.vinyl-shell{transition:none}}
