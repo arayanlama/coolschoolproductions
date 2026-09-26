@@ -254,3 +254,10 @@ nav{gap:28px}nav a{font-size:7px;letter-spacing:.19em}
 .vinyl-discover .vinyl-audio-view{display:grid}
 .vinyl-discover .vinyl-atmosphere{opacity:.72}
 .vinyl-discover:before{opacity:.12}
+
+/* Artist → Music links */
+.artist-link{cursor:pointer;position:relative}
+.artist-link:after{content:"PLAY RECORD →";position:absolute;right:14px;bottom:14px;z-index:4;padding:7px 9px;background:rgba(10,10,10,.72);color:#eee8dc;font-size:6px;letter-spacing:.17em;opacity:0;transform:translateY(5px);transition:opacity .25s,transform .25s;pointer-events:none}
+.artist-link:hover:after,.artist-link:focus-visible:after{opacity:1;transform:translateY(0)}
+.artist-link:focus-visible{outline:1px solid rgba(255,255,255,.7);outline-offset:-1px}
+@media(max-width:760px){.artist-link:after{opacity:.88;transform:none}}
