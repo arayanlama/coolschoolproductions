@@ -517,3 +517,25 @@ button:focus-visible,a:focus-visible,.artist-link:focus-visible,.audio-record:fo
 .home-contact-links a:first-child{border-top:1px solid #292927}
 .home-contact-links a:hover{padding-left:8px;opacity:.65}
 @media(max-width:700px){.home-contact{padding:18vw 6vw}.home-contact-row{grid-template-columns:1fr;gap:12vw}.home-contact h2{font-size:18vw}.home-contact-links{min-width:0;width:100%}}
+
+/* Efficient Explore catalogue */
+.explore-hero-compact{min-height:0;padding:clamp(105px,11vw,155px) 4vw clamp(42px,5vw,72px);justify-content:flex-end}
+.explore-title-row{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
+.explore-hero-compact h1{font-size:clamp(86px,15vw,220px);margin:22px 0 0}
+.explore-title-row>span{text-align:right;line-height:1.7;margin-bottom:8px}
+.explore-catalogue-efficient{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 3vw;padding:0 4vw 7vw}
+.explore-catalogue-efficient .explore-card{display:block;padding:clamp(28px,3.5vw,48px) 0;min-width:0}
+.explore-catalogue-efficient .explore-image{aspect-ratio:16/9}
+.explore-catalogue-efficient .explore-meta{grid-template-columns:28px minmax(0,1fr) auto;gap:12px;margin-top:17px;align-items:start}
+.explore-catalogue-efficient .explore-meta h2{font-size:clamp(24px,2.7vw,42px);margin:0 0 7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.explore-catalogue-efficient .explore-meta>b{padding-top:5px}
+@media(min-width:1300px){.explore-catalogue-efficient{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 2.2vw}.explore-catalogue-efficient .explore-meta h2{font-size:clamp(23px,2vw,34px)}}
+@media(max-width:700px){
+ .explore-hero-compact{padding:105px 6vw 38px}
+ .explore-title-row{display:block}.explore-title-row>span{display:block;text-align:left;margin-top:24px}
+ .explore-hero-compact h1{font-size:21vw}
+ .explore-catalogue-efficient{grid-template-columns:1fr;padding:0 6vw 16vw}
+ .explore-catalogue-efficient .explore-card{padding:28px 0}
+ .explore-catalogue-efficient .explore-meta{grid-template-columns:24px minmax(0,1fr) auto}
+ .explore-catalogue-efficient .explore-meta h2{font-size:8.5vw}
+}
