@@ -261,3 +261,50 @@ nav{gap:28px}nav a{font-size:7px;letter-spacing:.19em}
 .artist-link:hover:after,.artist-link:focus-visible:after{opacity:1;transform:translateY(0)}
 .artist-link:focus-visible{outline:1px solid rgba(255,255,255,.7);outline-offset:-1px}
 @media(max-width:760px){.artist-link:after{opacity:.88;transform:none}}
+
+/* 2026 site polish */
+:root{--ease:cubic-bezier(.2,.7,.2,1)}
+body{overflow-x:hidden}
+header{transition:background .3s ease,box-shadow .3s ease;height:68px}
+header:has(nav a:hover){box-shadow:0 8px 30px rgba(0,0,0,.06)}
+nav a{position:relative;padding:8px 0}
+nav a:after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:1px;background:currentColor;transition:right .3s var(--ease)}
+nav a:hover:after{right:0}
+.opening{min-height:calc(100svh - 68px)}
+.opening-mark,.opening-message{min-height:calc(100svh - 68px)}
+.opening-message{padding:clamp(42px,6vw,96px)}
+.opening h1{max-width:720px;text-wrap:balance}
+.prayer{max-width:510px}
+.hero-track figure{min-height:calc(100svh - 68px)}
+.hero-track figcaption{bottom:clamp(24px,3vw,46px)}
+.artist-link figcaption{transition:transform .35s var(--ease)}
+.artist-link:hover figcaption{transform:translateY(-4px)}
+.vinyl-discover{min-height:calc(100svh - 68px);height:auto;padding:0}
+.vinyl-audio-view{min-height:calc(100svh - 68px);padding:clamp(76px,8vh,110px) 0 clamp(54px,7vh,90px);width:min(1180px,88vw)}
+.audio-record{width:min(440px,38vw)}
+.audio-record:after{content:"";position:absolute;inset:4%;border-radius:50%;border:1px solid rgba(255,255,255,.035);pointer-events:none}
+.audio-deck{max-width:570px}
+.audio-deck h2{margin-bottom:8px}
+.audio-subtitle{margin:0 0 34px;font-size:7px;letter-spacing:.19em;color:#776b58}
+.audio-progress{margin-top:8px}
+.audio-controls{justify-content:flex-start;margin-top:32px}
+.audio-track-count{text-align:left;margin-left:4px}
+.discover-label{letter-spacing:.24em!important}
+.music-status{letter-spacing:.14em}
+.site-footer{min-height:auto;padding:7vw 4vw 2.5vw}
+.footer-top{align-items:flex-end}
+.footer-links a{transition:opacity .2s ease}.footer-links a:hover{opacity:.55}
+@media(max-width:760px){
+ header{height:60px}
+ .brand span{font-size:18px}.brand small{font-size:6px}
+ .opening-mark{min-height:52svh}.hero-track figure{min-height:52svh}
+ .opening-message{min-height:auto;padding:18vw 6vw 20vw}
+ .opening h1{font-size:15vw;margin-bottom:30px}.prayer{font-size:16px;line-height:1.6}
+ .vinyl-discover{min-height:100svh}
+ .vinyl-audio-view{min-height:100svh;width:88vw;padding:82px 0 44px;grid-template-columns:1fr;gap:30px;align-content:center}
+ .audio-record{width:min(66vw,280px)}
+ .audio-deck{width:100%}.audio-deck h2{font-size:40px}
+ .audio-subtitle{margin-bottom:24px}
+ .audio-controls{justify-content:center}.audio-track-count{text-align:center;margin-left:0}
+ .site-footer{padding-top:18vw}
+}
