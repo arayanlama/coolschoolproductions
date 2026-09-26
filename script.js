@@ -39,7 +39,7 @@ function onYouTubeIframeAPIReady(){
   document.querySelectorAll('.vinyl-video-panel iframe').forEach(frame=>{
     const disc=frame.closest('.vinyl-piece').querySelector('.vinyl-disc');
     new YT.Player(frame,{events:{onStateChange:e=>{
-      disc.classList.toggle('is-playing',e.data===YT.PlayerState.PLAYING);
+      const playing=e.data===YT.PlayerState.PLAYING;disc.classList.toggle('is-playing',playing);document.querySelector('.vinyl-discover')?.classList.toggle('is-playing',playing);
     }}});
   });
 }
