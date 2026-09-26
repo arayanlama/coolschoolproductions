@@ -561,3 +561,39 @@ nav{align-items:center}
  .simple-footer-brand{white-space:normal}
 }
 @media(min-width:761px){#menu{display:none!important}}
+
+/* Explore — intentional negative space */
+.explore-hero-editorial{
+ min-height:clamp(500px,70svh,760px);
+ padding:clamp(105px,12vh,150px) 4vw 34px;
+ justify-content:space-between
+}
+.explore-eyebrow,.explore-hero-foot{
+ display:flex;justify-content:space-between;align-items:center;
+ font-size:7px;letter-spacing:.2em;color:#77736b
+}
+.explore-title-row{width:100%;align-items:flex-end}
+.explore-hero-editorial h1{
+ font-size:clamp(110px,18vw,270px);
+ line-height:.68;margin:0;transform:translateX(-.015em)
+}
+.explore-index{
+ width:min(310px,25vw);padding:0 0 8px;
+ border-top:1px solid #35332e
+}
+.explore-index p{
+ font-family:Georgia,serif;font-size:clamp(15px,1.25vw,19px);
+ line-height:1.45;color:#b9b2a5;margin:16px 0 34px
+}
+.explore-index>span{font-size:7px;letter-spacing:.18em;color:#77736b}
+.explore-hero-foot{padding-top:22px;border-top:1px solid #292824}
+.explore-catalogue-efficient{border-top:1px solid #292824}
+@media(max-width:700px){
+ .explore-hero-editorial{min-height:62svh;padding:100px 6vw 25px}
+ .explore-eyebrow span:last-child{display:none}
+ .explore-title-row{display:block}
+ .explore-hero-editorial h1{font-size:23vw;margin:8vh 0 9vh}
+ .explore-index{width:100%;max-width:320px}
+ .explore-index p{font-size:16px;margin:14px 0 25px}
+ .explore-hero-foot{margin-top:8vh}
+}
