@@ -249,3 +249,8 @@ nav{gap:28px}nav a{font-size:7px;letter-spacing:.19em}
 .vinyl-discover.vinyl-mode:before{opacity:.12}
 .vinyl-audio-view{z-index:3}
 @media(max-width:760px){.vinyl-atmosphere{filter:blur(32px) saturate(.72) brightness(.3)}.vinyl-discover.vinyl-mode .vinyl-atmosphere{opacity:.62}}
+
+/* Vinyl is now the Music experience */
+.vinyl-discover .vinyl-audio-view{display:grid}
+.vinyl-discover .vinyl-atmosphere{opacity:.72}
+.vinyl-discover:before{opacity:.12}
