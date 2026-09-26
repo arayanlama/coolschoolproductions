@@ -144,3 +144,22 @@ nav{gap:28px}nav a{font-size:7px;letter-spacing:.19em}
 .vinyl-piece:has(.vinyl-disc.is-playing) .vinyl-video-panel .vinyl-play{opacity:0}
 .vinyl-meta{width:min(1180px,90vw);grid-template-columns:auto 1fr;max-width:none}
 @media(max-width:760px){.vinyl-piece{padding:9vh 6vw 8vh;justify-content:center}.vinyl-project{width:88vw;display:flex;flex-direction:column;gap:24px}.vinyl-project .vinyl-shell{width:min(62vw,290px);align-self:center}.vinyl-video-panel{width:88vw}.vinyl-meta{width:88vw}.vinyl-label span{font-size:12px}}
+
+/* Complete Music UI */
+.vinyl-discover{background:linear-gradient(180deg,#0d0d0c 0%,#070707 100%)}
+.music-status{position:absolute;z-index:11;right:22px;top:18px;display:flex;align-items:center;gap:8px;color:#8c8982;font-size:7px;letter-spacing:.18em}
+.status-dot{width:5px;height:5px;border-radius:50%;background:#777;transition:.25s}
+.vinyl-discover.is-playing .status-dot{background:#eee;box-shadow:0 0 0 4px rgba(255,255,255,.08)}
+.vinyl-discover.is-playing .music-status{color:#d8d4cc}
+.vinyl-project{padding:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.018)}
+.vinyl-video-panel{border:1px solid rgba(255,255,255,.1)}
+.vinyl-meta{border-top-color:rgba(255,255,255,.16);row-gap:7px}
+.track-line{grid-column:1/-1;display:grid;grid-template-columns:24px 1fr auto;gap:10px;align-items:center;margin-top:8px;font-size:6px;letter-spacing:.18em;color:#696761}
+.track-line div{height:1px;background:linear-gradient(90deg,#e8e3d9 0 0%,rgba(255,255,255,.14) 0 100%);transition:background .25s}
+.vinyl-piece:has(.vinyl-disc.is-playing) .track-line div{background:linear-gradient(90deg,#e8e3d9 0 38%,rgba(255,255,255,.14) 38% 100%)}
+.vinyl-piece:has(.vinyl-disc.is-playing) .track-line span:last-child:after{content:"ING"}
+.vinyl-piece:has(.vinyl-disc.is-playing) .track-line span:last-child{font-size:0}.vinyl-piece:has(.vinyl-disc.is-playing) .track-line span:last-child:before{content:"PLAY";font-size:6px}
+.vinyl-controls{bottom:20px}
+.vinyl-controls:before{content:"PREV";font-size:6px;letter-spacing:.16em;color:#666;margin-left:6px}
+.vinyl-controls:after{content:"NEXT";font-size:6px;letter-spacing:.16em;color:#666;margin-right:6px}
+@media(max-width:760px){.music-status{right:14px;top:14px}.vinyl-project{padding:10px}.vinyl-controls:before,.vinyl-controls:after{display:none}}
