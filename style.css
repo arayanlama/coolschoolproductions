@@ -365,3 +365,12 @@ nav a:hover:after{right:0}
 .submit-notes p{font-size:8px;letter-spacing:.14em;padding:11px 0;margin:0;border-bottom:1px solid #d2cec5}
 .submit-notes small{display:block;margin-top:22px;font-size:6px;line-height:1.6;letter-spacing:.14em;color:#88847c}
 @media(max-width:760px){.label-submit{min-height:auto;padding:24vw 6vw 16vw;grid-template-columns:1fr;gap:16vw}.submit-index{top:20px;left:6vw}.label-submit h2{font-size:15vw;margin-bottom:30px}.submit-intro{font-size:16px}.submit-cta{width:100%;min-width:0;gap:20px}.submit-notes{align-self:auto}}
+
+/* Simple footer */
+.site-footer.simple-footer{min-height:0;padding:28px 4vw;background:#0b0b0a;border-top:1px solid #292927;display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px 40px}
+.simple-footer-brand{font-family:Georgia,serif;font-size:18px;letter-spacing:-.035em}
+.simple-footer-links{display:flex;gap:24px;font-size:7px;letter-spacing:.16em}
+.simple-footer-links a{transition:opacity .2s ease}.simple-footer-links a:hover{opacity:.55}
+.simple-footer-meta{grid-column:1/-1;padding-top:18px;border-top:1px solid #242422;font-size:6px;letter-spacing:.16em;color:#6f6c66}
+.simple-footer .social-cta,.simple-footer .footer-top,.simple-footer .footer-bottom{display:none}
+@media(max-width:760px){.site-footer.simple-footer{padding:28px 6vw;grid-template-columns:1fr;gap:22px}.simple-footer-links{gap:18px;flex-wrap:wrap}.simple-footer-meta{grid-column:1}}
