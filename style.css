@@ -393,3 +393,21 @@ button:focus-visible,a:focus-visible,.artist-link:focus-visible,.audio-record:fo
  html{scroll-behavior:auto}
  *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+/* Core inner pages */
+.page-main{background:var(--cream);color:var(--black)}
+.editorial-page{min-height:calc(100svh - 68px);padding:clamp(100px,12vw,170px) 4vw 7vw;display:flex;flex-direction:column;justify-content:center}
+.page-kicker{margin:0 0 32px;font-size:8px;letter-spacing:.2em;color:#77736b}
+.editorial-page>h1{font-family:Georgia,serif;font-size:clamp(70px,10vw,150px);font-weight:400;line-height:.8;letter-spacing:-.075em;margin:0 0 clamp(55px,8vw,110px)}
+.editorial-page>h1 em{font-weight:400;color:#77736b}
+.page-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.7fr);gap:8vw;max-width:1100px}
+.page-grid p{font-family:Georgia,serif;font-size:18px;line-height:1.6;color:#666159;margin:0}
+.page-grid .page-lead,.page-lead{font-family:Georgia,serif;font-size:clamp(23px,3vw,40px);line-height:1.2;letter-spacing:-.035em;color:var(--black)}
+.page-link,.page-primary{display:inline-block;width:max-content;margin-top:55px;padding:16px 0;border-block:1px solid #aaa59b;font-size:8px;letter-spacing:.17em}
+.artist-page-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #aaa59b;border-bottom:1px solid #aaa59b}
+.artist-page-card{padding:28px 24px 32px;border-right:1px solid #c9c5bc;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;transition:background .25s,color .25s}
+.artist-page-card:last-child{border-right:0}.artist-page-card:hover{background:var(--black);color:var(--cream)}
+.artist-page-card span,.artist-page-card small{font-size:7px;letter-spacing:.17em}.artist-page-card h2{font-family:Georgia,serif;font-size:clamp(30px,3vw,48px);font-weight:400;letter-spacing:-.045em;margin:auto 0}
+.catalogue-list{margin-top:70px;border-top:1px solid #aaa59b;max-width:900px}.catalogue-list span{display:block;padding:17px 0;border-bottom:1px solid #d0ccc3;font-size:8px;letter-spacing:.15em}
+.contact-stack{display:flex;flex-direction:column;gap:14px}.contact-stack a{font-family:Georgia,serif;font-size:clamp(18px,2vw,28px);border-bottom:1px solid #bbb6ad;padding-bottom:10px}
+@media(max-width:760px){.editorial-page{min-height:auto;padding:24vw 6vw 18vw}.editorial-page>h1{font-size:18vw;margin-bottom:16vw}.page-grid{grid-template-columns:1fr;gap:10vw}.artist-page-grid{grid-template-columns:1fr}.artist-page-card{min-height:180px;border-right:0;border-bottom:1px solid #c9c5bc}.artist-page-card:last-child{border-bottom:0}.page-primary,.page-link{margin-top:42px}}
