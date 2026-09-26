@@ -186,3 +186,18 @@ nav{gap:28px}nav a{font-size:7px;letter-spacing:.19em}
 .status-dot{background:#74654e}.vinyl-discover.is-playing .status-dot{background:#d8c7a5;box-shadow:0 0 0 4px rgba(216,199,165,.08)}
 .track-line div{background:linear-gradient(90deg,#cbb78f 0 0%,rgba(216,199,165,.18) 0 100%)}
 .vinyl-piece:has(.vinyl-disc.is-playing) .track-line div{background:linear-gradient(90deg,#cbb78f 0 38%,rgba(216,199,165,.18) 38% 100%)}
+
+/* Video-first Music showcase */
+.vinyl-project{width:min(1380px,94vw);grid-template-columns:minmax(210px,.48fr) minmax(620px,1.52fr);gap:clamp(28px,4vw,64px);padding:14px}
+.vinyl-project .vinyl-shell{max-width:380px}
+.vinyl-video-panel{width:100%;aspect-ratio:16/9;border:3px solid #2b251b;filter:none;box-shadow:0 24px 80px rgba(0,0,0,.42);transition:transform .35s ease,box-shadow .35s ease}
+.vinyl-video-panel:hover{transform:scale(1.008);box-shadow:0 28px 90px rgba(0,0,0,.52)}
+.vinyl-video-panel iframe{width:100%;height:100%}
+.vinyl-meta{width:min(1380px,94vw)}
+@media(max-width:760px){
+ .vinyl-piece{padding:7vh 4vw 8vh}
+ .vinyl-project{width:94vw;display:flex;flex-direction:column-reverse;gap:18px;padding:8px}
+ .vinyl-video-panel{width:100%;aspect-ratio:16/9;border-width:2px}
+ .vinyl-project .vinyl-shell{width:min(44vw,190px)}
+ .vinyl-meta{width:94vw;margin-top:12px}
+}
