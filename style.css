@@ -348,3 +348,20 @@ nav a:hover:after{right:0}
  .audio-track-count{text-align:right}
  .audio-record-wrap:after{bottom:-21px}
 }
+
+/* Artist submissions — final chapter */
+.label-submit{position:relative;min-height:88svh;background:var(--cream);color:var(--black);padding:clamp(80px,10vw,150px) 4vw 5vw;display:grid;grid-template-columns:minmax(0,1.7fr) minmax(240px,.7fr);column-gap:8vw;border-top:1px solid var(--line)}
+.submit-index{position:absolute;top:24px;left:4vw;font-size:7px;letter-spacing:.2em;color:#77736b}
+.submit-copy{align-self:center;max-width:900px}
+.submit-kicker{font-size:8px;letter-spacing:.2em;color:#77736b;margin:0 0 28px}
+.label-submit h2{font-family:Georgia,serif;font-size:clamp(62px,8vw,126px);font-weight:400;line-height:.82;letter-spacing:-.07em;margin:0 0 40px}
+.label-submit h2 em{font-weight:400;color:#77736b}
+.submit-intro{font-family:Georgia,serif;font-size:clamp(17px,1.5vw,21px);line-height:1.6;max-width:620px;color:#57544d;margin:0 0 42px}
+.submit-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:70px;min-width:min(100%,390px);padding:18px 0;border-top:1px solid var(--black);border-bottom:1px solid var(--black);font-size:9px;letter-spacing:.16em;transition:padding .3s var(--ease)}
+.submit-cta span{font-family:Georgia,serif;font-size:22px;line-height:1}
+.submit-cta:hover{padding-left:10px;padding-right:10px}
+.submit-notes{align-self:end;border-top:1px solid #aaa59b;padding-top:16px}
+.submit-notes>span{display:block;font-size:7px;letter-spacing:.2em;color:#77736b;margin-bottom:26px}
+.submit-notes p{font-size:8px;letter-spacing:.14em;padding:11px 0;margin:0;border-bottom:1px solid #d2cec5}
+.submit-notes small{display:block;margin-top:22px;font-size:6px;line-height:1.6;letter-spacing:.14em;color:#88847c}
+@media(max-width:760px){.label-submit{min-height:auto;padding:24vw 6vw 16vw;grid-template-columns:1fr;gap:16vw}.submit-index{top:20px;left:6vw}.label-submit h2{font-size:15vw;margin-bottom:30px}.submit-intro{font-size:16px}.submit-cta{width:100%;min-width:0;gap:20px}.submit-notes{align-self:auto}}
