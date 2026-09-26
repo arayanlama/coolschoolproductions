@@ -36,6 +36,7 @@ if(videoTrack){
 }
 
 function onYouTubeIframeAPIReady(){
+  const hidden=document.createElement('div');hidden.id='vinyl-audio-youtube';hidden.style.cssText='position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none';document.body.appendChild(hidden);audioPlayer=new YT.Player('vinyl-audio-youtube',{height:'1',width:'1',videoId:audioIds[0],playerVars:{playsinline:1},events:{onReady:()=>{syncAudioUI();audioTimer=setInterval(syncAudioUI,500)},onStateChange:e=>{const p=e.data===YT.PlayerState.PLAYING;audioRecord?.classList.toggle('playing',p);if(audioPlay)audioPlay.textContent=p?'Ⅱ':'▶';if(e.data===YT.PlayerState.ENDED)loadAudio(audioIndex+1)}}});
   document.querySelectorAll('.vinyl-video-panel iframe').forEach(frame=>{
     const disc=frame.closest('.vinyl-piece').querySelector('.vinyl-disc');
     new YT.Player(frame,{events:{onStateChange:e=>{
@@ -59,3 +60,16 @@ if(vinylTrack){
  dots.forEach((d,i)=>d.addEventListener('click',()=>go(i)));
  let raf;vinylTrack.addEventListener('scroll',()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{const n=current();dots.forEach((d,i)=>d.classList.toggle('active',i===n))})},{passive:true});
 }
+
+const musicSection=document.querySelector('.vinyl-discover');
+const musicTabs=[...document.querySelectorAll('.music-tab')];
+const audioRecord=document.querySelector('.audio-record'),audioArt=document.querySelector('.audio-art'),audioPlay=document.querySelector('.audio-play'),audioRange=document.querySelector('.audio-range'),audioCurrent=document.querySelector('.audio-time.current'),audioDuration=document.querySelector('.audio-time.duration'),audioKicker=document.querySelector('.audio-kicker'),audioTitle=document.querySelector('.audio-deck h2'),audioCount=document.querySelector('.audio-track-count');
+let audioIndex=0,audioPlayer=null,audioTimer=null;
+const audioIds=['Fwh7mNnAlLo','-DFW8CKMvQo','y7Yft2SFBBQ'];
+const fmt=s=>{s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
+function syncAudioUI(){if(!audioPlayer||!audioPlayer.getDuration)return;try{const d=audioPlayer.getDuration(),t=audioPlayer.getCurrentTime();audioCurrent.textContent=fmt(t);audioDuration.textContent=fmt(d);audioRange.value=d?Math.round(t/d*1000):0}catch(e){}}
+function loadAudio(i){audioIndex=(i+audioIds.length)%audioIds.length;audioArt.style.backgroundImage=`url('https://i.ytimg.com/vi/${audioIds[audioIndex]}/hqdefault.jpg')`;audioKicker.textContent=`NOW PLAYING · CSP—00${audioIndex+1}`;audioTitle.textContent=`PROJECT 0${audioIndex+1}`;audioCount.textContent=`0${audioIndex+1} / 03`;if(audioPlayer?.loadVideoById)audioPlayer.loadVideoById(audioIds[audioIndex])}
+musicTabs.forEach(t=>t.addEventListener('click',()=>{musicTabs.forEach(x=>x.classList.toggle('active',x===t));musicSection?.classList.toggle('vinyl-mode',t.dataset.view==='vinyl')}));
+document.querySelector('.audio-prev')?.addEventListener('click',()=>loadAudio(audioIndex-1));document.querySelector('.audio-next')?.addEventListener('click',()=>loadAudio(audioIndex+1));
+audioPlay?.addEventListener('click',()=>{if(!audioPlayer)return;const p=audioPlayer.getPlayerState()===YT.PlayerState.PLAYING;p?audioPlayer.pauseVideo():audioPlayer.playVideo()});
+audioRange?.addEventListener('input',()=>{if(audioPlayer?.getDuration)audioPlayer.seekTo(audioPlayer.getDuration()*audioRange.value/1000,true)});
