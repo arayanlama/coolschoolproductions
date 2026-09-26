@@ -65,7 +65,7 @@ const musicSection=document.querySelector('.vinyl-discover');
 const musicTabs=[...document.querySelectorAll('.music-tab')];
 const vinylAtmosphere=document.querySelector('.vinyl-atmosphere'),audioRecord=document.querySelector('.audio-record'),audioArt=document.querySelector('.audio-art'),audioPlay=document.querySelector('.audio-play'),audioRange=document.querySelector('.audio-range'),audioCurrent=document.querySelector('.audio-time.current'),audioDuration=document.querySelector('.audio-time.duration'),audioKicker=document.querySelector('.audio-kicker'),audioTitle=document.querySelector('.audio-deck h2'),audioCount=document.querySelector('.audio-track-count');
 let audioIndex=0,audioPlayer=null,audioTimer=null;
-const audioIds=['Fwh7mNnAlLo','-DFW8CKMvQo','y7Yft2SFBBQ'];
+const audioIds=['rxdvPtSi1rs','-DFW8CKMvQo','y7Yft2SFBBQ'];
 const fmt=s=>{s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
 function syncAudioUI(){if(!audioPlayer||!audioPlayer.getDuration)return;try{const d=audioPlayer.getDuration(),t=audioPlayer.getCurrentTime();audioCurrent.textContent=fmt(t);audioDuration.textContent=fmt(d);audioRange.value=d?Math.round(t/d*1000):0}catch(e){}}
 function loadAudio(i){audioIndex=(i+audioIds.length)%audioIds.length;const art=`url('https://i.ytimg.com/vi/${audioIds[audioIndex]}/maxresdefault.jpg')`;audioArt.style.backgroundImage=art;if(vinylAtmosphere){vinylAtmosphere.style.opacity='0';setTimeout(()=>{vinylAtmosphere.style.backgroundImage=art;vinylAtmosphere.style.opacity=''},180)}audioKicker.textContent=`NOW PLAYING · CSP—00${audioIndex+1}`;audioTitle.textContent=`PROJECT 0${audioIndex+1}`;audioCount.textContent=`0${audioIndex+1} / 03`;if(audioPlayer?.loadVideoById)audioPlayer.loadVideoById(audioIds[audioIndex])}
@@ -82,7 +82,7 @@ document.addEventListener('keydown',e=>{
  if(e.code==='Space'&&musicSection.classList.contains('vinyl-mode')){e.preventDefault();audioPlay?.click()}
 });
 
-if(vinylAtmosphere)vinylAtmosphere.style.backgroundImage=`url('https://i.ytimg.com/vi/${audioIds[0]}/maxresdefault.jpg')`;
+if(vinylAtmosphere)vinylAtmosphere.style.backgroundImage=`url('https://i.ytimg.com/vi/${audioIds[0]}/maxresdefault.jpg')`;if(audioArt)audioArt.style.backgroundImage=`url('https://i.ytimg.com/vi/${audioIds[0]}/maxresdefault.jpg')`;
 
 document.querySelectorAll('.artist-link[data-track]').forEach(card=>{
  const openArtistRecord=()=>{
