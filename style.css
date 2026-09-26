@@ -348,13 +348,3 @@ nav a:hover:after{right:0}
  .audio-track-count{text-align:right}
  .audio-record-wrap:after{bottom:-21px}
 }
-
-/* Compact music visuals monitor */
-.visual-monitor{margin-top:30px;border:1px solid rgba(216,199,165,.18);background:rgba(14,12,9,.42);padding:8px;box-shadow:0 16px 45px rgba(0,0,0,.2)}
-.visual-head{height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 3px;font-size:6px;letter-spacing:.18em;color:#847761}
-.visual-head span:last-child:before{content:"";display:inline-block;width:5px;height:5px;margin-right:7px;border-radius:50%;background:#bca984;vertical-align:1px}
-.visual-screen{position:relative;aspect-ratio:16/9;overflow:hidden;background:#050505}
-.visual-screen:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),inset 0 0 32px rgba(0,0,0,.2)}
-.visual-player{width:100%;height:100%;border:0;display:block}
-@media(min-width:761px){.visual-monitor{width:min(420px,100%)}}
-@media(max-width:760px){.visual-monitor{margin-top:26px;width:100%}}
