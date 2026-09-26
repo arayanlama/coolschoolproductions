@@ -47,3 +47,13 @@
 .discover-full .video-frame{width:100%;height:100%;aspect-ratio:auto;border-radius:0;background:#000}
 .discover-full .video-frame iframe{width:100%;height:100%;display:block}
 @media(max-width:760px){.discover-full{min-height:100svh}.discover-full .discover-label{top:16px;left:16px}.discover-full .video-track{height:100svh;display:flex;gap:1px;padding:0;overflow-x:auto;scroll-snap-type:x mandatory}.discover-full .video-slide{flex:0 0 100vw;height:100svh;scroll-snap-align:start}.discover-full .video-frame{height:100%}}
+
+/* Final Discover polish */
+.discover-full{min-height:auto;background:#080808;border-top:1px solid rgba(255,255,255,.12)}
+.discover-full .discover-label{top:18px;left:22px;padding:7px 9px;background:rgba(8,8,8,.58);border:1px solid rgba(255,255,255,.16);font-size:7px;line-height:1;letter-spacing:.22em;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.discover-full .video-track{height:auto;min-height:72vh;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.12)}
+.discover-full .video-slide{height:auto;min-height:72vh;background:#080808}
+.discover-full .video-frame{height:100%;min-height:72vh;position:relative;overflow:hidden}
+.discover-full .video-frame iframe{position:absolute;inset:0;border:0;background:#000}
+@media(min-width:761px){.discover-full .video-track{max-height:820px}.discover-full .video-slide,.discover-full .video-frame{max-height:820px}}
+@media(max-width:760px){.discover-full{min-height:auto}.discover-full .discover-label{top:14px;left:14px}.discover-full .video-track{height:72svh;min-height:0}.discover-full .video-slide{height:72svh;min-height:0}.discover-full .video-frame{height:72svh;min-height:0}}
