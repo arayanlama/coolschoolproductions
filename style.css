@@ -497,3 +497,12 @@ button:focus-visible,a:focus-visible,.artist-link:focus-visible,.audio-record:fo
 .submission-guide article p{font-family:Georgia,serif;font-size:15px;line-height:1.55;color:#6c675e;max-width:330px}
 .submission-note{margin:25px 0 0;font-size:7px;letter-spacing:.16em;color:#77736b}
 @media(max-width:700px){.submission-hero{min-height:auto;padding:28vw 6vw 18vw}.submission-hero h1{font-size:20vw;margin-bottom:14vw}.submission-lead{grid-template-columns:1fr;gap:10vw}.submission-lead a{width:max-content}.submission-guide{padding:16vw 6vw 20vw}.submission-guide-grid{grid-template-columns:1fr}.submission-guide article,.submission-guide article+article{padding:28px 0 34px;border-right:0;border-bottom:1px solid #c8c3ba}.submission-guide article:last-child{border-bottom:0}.submission-guide article h2{margin:30px 0 14px;font-size:34px}}
+
+/* Frictionless submissions */
+.submit-simple{min-height:72svh;background:var(--cream);color:var(--black);display:flex;align-items:center;padding:9vw 4vw}
+.submit-simple-inner>span,.submission-simple-page section>span{font-size:7px;letter-spacing:.2em;color:#77736b}
+.submit-simple h2,.submission-simple-page h1{font-family:Georgia,serif;font-size:clamp(76px,12vw,180px);font-weight:400;line-height:.78;letter-spacing:-.08em;margin:34px 0 60px}
+.submit-simple a,.submission-simple-page a{display:inline-block;font-size:9px;letter-spacing:.18em;padding:18px 0;border-block:1px solid #99948b;min-width:220px}
+.submission-simple-page{background:var(--cream);color:var(--black)}
+.submission-simple-page section{min-height:calc(100svh - 68px);display:flex;flex-direction:column;justify-content:center;padding:10vw 4vw}
+@media(max-width:700px){.submit-simple{min-height:62svh;padding:20vw 6vw}.submit-simple h2,.submission-simple-page h1{font-size:20vw;margin:28px 0 45px}.submission-simple-page section{min-height:calc(100svh - 60px);padding:20vw 6vw}}
