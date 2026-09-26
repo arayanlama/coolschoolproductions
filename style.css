@@ -163,3 +163,26 @@ nav{gap:28px}nav a{font-size:7px;letter-spacing:.19em}
 .vinyl-controls:before{content:"PREV";font-size:6px;letter-spacing:.16em;color:#666;margin-left:6px}
 .vinyl-controls:after{content:"NEXT";font-size:6px;letter-spacing:.16em;color:#666;margin-right:6px}
 @media(max-width:760px){.music-status{right:14px;top:14px}.vinyl-project{padding:10px}.vinyl-controls:before,.vinyl-controls:after{display:none}}
+
+/* Vintage record-library treatment */
+.vinyl-discover{background:#17140f;color:#e8dfcb;isolation:isolate}
+.vinyl-discover:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.24;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px),radial-gradient(circle at 18% 22%,rgba(205,177,122,.11),transparent 34%),radial-gradient(circle at 78% 72%,rgba(111,82,45,.13),transparent 36%);mix-blend-mode:screen}
+.vinyl-track,.discover-label,.music-status,.vinyl-controls{position:relative;z-index:2}
+.vinyl-discover .discover-label{font-family:Georgia,serif;color:#d8c7a5;letter-spacing:.12em}
+.music-status{color:#8f8169}
+.vinyl-discover.is-playing .music-status{color:#d9c9aa}
+.vinyl-project{border:1px solid rgba(216,199,165,.24);background:#201c15;box-shadow:0 24px 70px rgba(0,0,0,.32),inset 0 0 45px rgba(130,96,49,.045)}
+.vinyl-project:before{content:"COOL SCHOOL RECORD LIBRARY";position:absolute;transform:translateY(-35px);font-size:6px;letter-spacing:.24em;color:#776b58}
+.vinyl-disc{background:repeating-radial-gradient(circle at center,#090806 0 2px,#181610 3px 4px,#080706 5px 7px);box-shadow:0 22px 60px rgba(0,0,0,.52),inset 0 0 0 1px rgba(222,204,166,.12)}
+.vinyl-label{background:#d7c49d;color:#251e14;box-shadow:inset 0 0 0 1px rgba(65,47,25,.28)}
+.vinyl-label span{font-style:italic}.vinyl-label small{color:#67583f}
+.vinyl-video-panel{border:8px solid #2b251b;outline:1px solid rgba(216,199,165,.18);filter:sepia(.12) contrast(.96) saturate(.82)}
+.vinyl-meta{color:#ded2ba;border-top:1px solid rgba(216,199,165,.32)}
+.vinyl-meta span,.vinyl-meta small,.track-line{color:#8f8169}
+.vinyl-meta strong{font-style:italic;color:#e7dbc3}
+.vinyl-controls{border-color:rgba(216,199,165,.25);background:rgba(30,25,18,.84);box-shadow:0 8px 24px rgba(0,0,0,.24)}
+.vinyl-controls>button{color:#dfd1b5}.vinyl-controls>button:hover{background:rgba(216,199,165,.12)}
+.vinyl-dots button{background:rgba(216,199,165,.25)}.vinyl-dots button.active{background:#d8c7a5}
+.status-dot{background:#74654e}.vinyl-discover.is-playing .status-dot{background:#d8c7a5;box-shadow:0 0 0 4px rgba(216,199,165,.08)}
+.track-line div{background:linear-gradient(90deg,#cbb78f 0 0%,rgba(216,199,165,.18) 0 100%)}
+.vinyl-piece:has(.vinyl-disc.is-playing) .track-line div{background:linear-gradient(90deg,#cbb78f 0 38%,rgba(216,199,165,.18) 38% 100%)}
