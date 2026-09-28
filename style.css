@@ -923,3 +923,36 @@ header{position:relative;z-index:1000}
  .hero-statement-foot{grid-template-columns:1fr;align-items:start;gap:32px}
  .hero-statement-foot a{width:max-content}
 }
+
+
+/* Hero statement correction — keep the complete message in-frame */
+.opening-message .hero-statement-body{
+ margin-top:0;
+ padding-top:0;
+ flex:1;
+ display:flex;
+ flex-direction:column;
+ justify-content:flex-end;
+ min-height:0;
+ padding-bottom:clamp(34px,5vh,72px);
+}
+.opening-message .hero-statement-body h1{
+ display:block;
+ visibility:visible;
+ opacity:1;
+ margin:0 0 clamp(30px,4vw,54px);
+ max-width:none;
+ font-size:clamp(62px,6.8vw,112px);
+ line-height:.82;
+ letter-spacing:-.065em;
+ color:var(--black);
+}
+.opening-message .hero-statement-foot{
+ grid-template-columns:minmax(0,440px) auto;
+ justify-content:space-between;
+}
+@media(max-width:760px){
+ .opening-message .hero-statement-body{padding:18vw 0 4vw;justify-content:flex-end}
+ .opening-message .hero-statement-body h1{font-size:clamp(58px,17vw,92px);line-height:.84}
+ .opening-message .hero-statement-foot{grid-template-columns:1fr}
+}
