@@ -956,3 +956,43 @@ header{position:relative;z-index:1000}
  .opening-message .hero-statement-body h1{font-size:clamp(58px,17vw,92px);line-height:.84}
  .opening-message .hero-statement-foot{grid-template-columns:1fr}
 }
+
+
+/* Hero frame correction — portrait must not define row height */
+@media(min-width:761px){
+ .opening{
+  height:calc(100svh - 74px);
+  min-height:620px;
+  max-height:900px;
+  overflow:hidden;
+  align-items:stretch;
+ }
+ .opening-mark,.opening-message{
+  height:100%;
+  min-height:0;
+  overflow:hidden;
+ }
+ .opening-mark .hero-track{
+  height:100%;
+  min-height:0;
+  display:flex;
+  overflow-x:auto;
+  overflow-y:hidden;
+ }
+ .opening-mark .artist-link{
+  height:100%;
+  min-height:0;
+  flex:0 0 100%;
+  margin:0;
+ }
+ .opening-mark .artist-link img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+ }
+ .opening-message .hero-statement-body{
+  overflow:visible;
+  padding-bottom:0;
+ }
+}
