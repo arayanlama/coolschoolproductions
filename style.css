@@ -892,3 +892,16 @@ header{position:relative;z-index:1000}
  .artist-directory h2{font-size:12vw}
  .contact-directory a{grid-template-columns:1fr;gap:8px}
 }
+
+
+/* Hero artist image treatment — supplied originals */
+.hero-track .artist-link img{width:100%;height:100%;object-fit:cover}
+.hero-track .artist-madhura img,.hero-track .artist-mellow img{filter:grayscale(1)}
+.hero-track .artist-ryhaan img{object-position:50% 43%}
+.hero-track .artist-madhura img{object-position:50% 42%}
+.hero-track .artist-mellow img{object-position:50% 45%}
+@media(max-width:760px){
+ .hero-track .artist-ryhaan img{object-position:50% 38%}
+ .hero-track .artist-madhura img{object-position:50% 36%}
+ .hero-track .artist-mellow img{object-position:50% 44%}
+}
