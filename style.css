@@ -645,3 +645,46 @@ nav{align-items:center}
  .explore-catalogue-efficient .explore-card{padding:10px;border-radius:13px}
 }
 @media(prefers-reduced-motion:reduce){.explore-catalogue-efficient .explore-card,.explore-catalogue-efficient .explore-image img{transition:none}}
+
+
+/* Homepage Discover — editorial polish */
+#discover.vinyl-discover{
+ background:
+  radial-gradient(circle at 22% 28%,rgba(216,199,165,.10),transparent 27%),
+  radial-gradient(circle at 78% 70%,rgba(255,255,255,.035),transparent 30%),
+  linear-gradient(145deg,#17140f 0%,#0b0a08 58%,#15120e 100%);
+ border-top:1px solid rgba(216,199,165,.18);
+ border-bottom:1px solid rgba(216,199,165,.12)
+}
+#discover.vinyl-discover:after{
+ content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.18;
+ background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 4px)
+}
+#discover .discover-label{
+ display:flex;align-items:center;gap:12px;
+ font-family:Georgia,serif;font-size:10px;letter-spacing:.18em;color:#d8c7a5
+}
+#discover .discover-label:before{content:"02";font-family:Arial,sans-serif;font-size:6px;letter-spacing:.16em;color:#716653}
+#discover .discover-label:after{content:"SELECTED MUSIC";font-family:Arial,sans-serif;font-size:6px;letter-spacing:.18em;color:#716653;margin-left:4px}
+#discover .vinyl-audio-view{position:relative;z-index:3}
+#discover .audio-record-wrap:before{
+ content:"COOL SCHOOL ARCHIVE";position:absolute;left:50%;top:-34px;transform:translateX(-50%);
+ white-space:nowrap;font-size:6px;letter-spacing:.24em;color:#756a58
+}
+#discover .audio-record{
+ box-shadow:0 30px 90px rgba(0,0,0,.52),0 0 0 1px rgba(216,199,165,.08);
+ transition:transform .45s var(--ease),box-shadow .45s ease
+}
+#discover .audio-record:hover{transform:scale(1.025) rotate(-1deg);box-shadow:0 38px 110px rgba(0,0,0,.62),0 0 0 1px rgba(216,199,165,.14)}
+#discover .audio-deck{
+ padding:34px 0 28px;border-top:1px solid rgba(216,199,165,.28);border-bottom:1px solid rgba(216,199,165,.16)
+}
+#discover .audio-kicker:before{content:"●";font-size:7px;margin-right:9px;color:#d8c7a5}
+#discover .audio-heading h2{letter-spacing:-.055em}
+#discover .playing-badge{background:rgba(216,199,165,.06)}
+#discover .audio-play{box-shadow:0 10px 35px rgba(0,0,0,.34),0 0 0 1px rgba(255,255,255,.08)}
+@media(max-width:680px){
+ #discover .discover-label:after{display:none}
+ #discover .audio-record-wrap:before{top:-25px}
+ #discover .audio-deck{padding:26px 0 22px}
+}
