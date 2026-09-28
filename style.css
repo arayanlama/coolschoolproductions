@@ -688,3 +688,102 @@ nav{align-items:center}
  #discover .audio-record-wrap:before{top:-25px}
  #discover .audio-deck{padding:26px 0 22px}
 }
+
+
+/* Warm glass preview — palette derived from Cool School logo */
+:root{
+ --csp-ivory:#f1eee7;
+ --csp-ink:#0d0d0c;
+ --csp-glass-light:rgba(241,238,231,.68);
+ --csp-glass-dark:rgba(24,23,20,.58);
+ --csp-glass-line:rgba(241,238,231,.22);
+ --csp-warm-line:rgba(13,13,12,.12)
+}
+body{
+ background:var(--csp-ivory);
+ background-image:radial-gradient(circle at 15% 12%,rgba(255,255,255,.72),transparent 26%),radial-gradient(circle at 82% 30%,rgba(190,184,172,.16),transparent 28%)
+}
+header{
+ top:10px;left:2vw;right:2vw;width:auto;height:58px;
+ background:rgba(241,238,231,.64)!important;
+ border:1px solid rgba(13,13,12,.10);
+ border-radius:18px;
+ box-shadow:0 12px 38px rgba(28,26,22,.08),inset 0 1px 0 rgba(255,255,255,.78);
+ -webkit-backdrop-filter:blur(20px) saturate(115%);
+ backdrop-filter:blur(20px) saturate(115%);
+ padding-inline:22px;
+}
+header:before{
+ content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+ background:linear-gradient(115deg,rgba(255,255,255,.35),transparent 32%,transparent 70%,rgba(255,255,255,.08))
+}
+header>*{position:relative;z-index:1}
+.opening{padding:10px 2vw 2vw;gap:2vw;background:transparent}
+.opening-mark,.opening-message{
+ min-height:calc(100svh - 98px);
+ border-radius:28px;overflow:hidden;
+ box-shadow:0 18px 60px rgba(28,26,22,.08);
+ border:1px solid rgba(13,13,12,.08)
+}
+.opening-message{
+ background:var(--csp-glass-light);
+ -webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);
+ box-shadow:0 18px 60px rgba(28,26,22,.07),inset 0 1px 0 rgba(255,255,255,.8)
+}
+.showcase-hint{
+ top:20px;left:20px;right:20px;width:auto;
+ padding:11px 13px;border:1px solid rgba(255,255,255,.22);border-radius:999px;
+ background:rgba(12,12,11,.30);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)
+}
+.artist-link figcaption{
+ left:20px;bottom:20px;padding:10px 13px;border-radius:999px;
+ background:rgba(12,12,11,.32);border:1px solid rgba(255,255,255,.18);
+ -webkit-backdrop-filter:blur(15px);backdrop-filter:blur(15px)
+}
+#discover.vinyl-discover{
+ margin:0 2vw 2vw;border-radius:28px;min-height:calc(100svh - 40px);
+ border:1px solid rgba(241,238,231,.13);
+ box-shadow:0 24px 80px rgba(13,13,12,.20),inset 0 1px 0 rgba(255,255,255,.08)
+}
+#discover .audio-deck{
+ padding:34px 30px 28px;border:1px solid var(--csp-glass-line);border-radius:24px;
+ background:var(--csp-glass-dark);
+ -webkit-backdrop-filter:blur(24px) saturate(115%);backdrop-filter:blur(24px) saturate(115%);
+ box-shadow:0 20px 60px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.08)
+}
+#discover .audio-deck:after{
+ content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+ background:linear-gradient(125deg,rgba(255,255,255,.08),transparent 28%,transparent 72%,rgba(216,199,165,.04))
+}
+#discover .audio-deck>*{position:relative;z-index:1}
+.submit-simple{
+ margin:0 2vw 2vw;border-radius:28px;min-height:68svh;
+ background:rgba(241,238,231,.72);
+ border:1px solid var(--csp-warm-line);
+ box-shadow:0 18px 60px rgba(28,26,22,.06),inset 0 1px 0 rgba(255,255,255,.82);
+ -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)
+}
+.home-contact{
+ margin:0 2vw 2vw;border-radius:28px;overflow:hidden;
+ background:linear-gradient(145deg,rgba(19,19,17,.96),rgba(10,10,9,.98));
+ border:1px solid rgba(241,238,231,.12);
+ box-shadow:0 20px 70px rgba(13,13,12,.16)
+}
+.home-contact-links{
+ padding:8px 18px;border-radius:18px;background:rgba(241,238,231,.055);
+ border:1px solid rgba(241,238,231,.10);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)
+}
+.site-footer.simple-footer{
+ margin:0 2vw 18px;border-radius:22px;border:1px solid rgba(241,238,231,.10);
+ background:rgba(12,12,11,.96)
+}
+@media(max-width:760px){
+ header{top:8px;left:3vw;right:3vw;height:54px;border-radius:16px;padding-inline:16px}
+ nav{top:62px;left:0;right:0;border-radius:16px;background:rgba(241,238,231,.88);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px)}
+ .opening{padding:8px 3vw 3vw;display:block}
+ .opening-mark{min-height:55svh;border-radius:22px;margin-bottom:3vw}
+ .opening-message{min-height:auto;border-radius:22px;padding:18vw 7vw}
+ #discover.vinyl-discover,.submit-simple,.home-contact{margin:0 3vw 3vw;border-radius:22px}
+ #discover .audio-deck{padding:25px 20px 22px;border-radius:19px}
+ .site-footer.simple-footer{margin:0 3vw 12px;border-radius:18px}
+}
