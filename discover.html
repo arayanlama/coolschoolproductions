@@ -1,1 +1,114 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore selected music and visual work from Cool School Productions."><title>Explore — Cool School Productions</title><link rel="stylesheet" href="style.css"></head><body><header><a class="brand" href="index.html"><span>Cool School</span><small>productions</small></a><button id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">MENU</button><nav id="site-nav"><a href="discover.html">DISCOVER</a><a href="index.html#submit">SUBMIT</a><a href="index.html#contact">CONTACT US</a></nav></header><main class="explore-page"><section class="explore-hero explore-hero-compact explore-hero-editorial"><div class="explore-eyebrow"><span>COOL SCHOOL PRODUCTIONS</span><span>SELECTED WORK · 2026</span></div><div class="explore-title-row"><h1>EXPLORE</h1><div class="explore-index"><p>Music and visual work<br>from the Cool School archive.</p><span>SELECTED MUSIC · INDIA</span></div></div><div class="explore-hero-foot"><span>MUSIC ARCHIVE</span><span>SCROLL TO EXPLORE ↓</span></div></section><section class="explore-catalogue explore-catalogue-efficient"><a class="explore-card" href="https://www.youtube.com/watch?v=eNBL3RA2nes" target="_blank" rel="noopener"><div class="explore-image"><img src="https://i.ytimg.com/vi/eNBL3RA2nes/hqdefault.jpg" alt="BELIEF"></div><div class="explore-meta"><span>01</span><div><h2>BELIEF</h2><p>ARAYAN LAMA</p></div><b>WATCH ↗</b></div></a><a class="explore-card" href="https://www.youtube.com/watch?v=MDRCj9q_BF8" target="_blank" rel="noopener"><div class="explore-image"><img src="https://i.ytimg.com/vi/MDRCj9q_BF8/hqdefault.jpg" alt="ADDICTED"></div><div class="explore-meta"><span>02</span><div><h2>ADDICTED</h2><p>ARAYAN LAMA</p></div><b>WATCH ↗</b></div></a><a class="explore-card" href="https://www.youtube.com/watch?v=rxdvPtSi1rs" target="_blank" rel="noopener"><div class="explore-image"><img src="https://i.ytimg.com/vi/rxdvPtSi1rs/hqdefault.jpg" alt="RYHAAN GIRI"></div><div class="explore-meta"><span>03</span><div><h2>RYHAAN GIRI</h2><p>COOL SCHOOL PRODUCTIONS</p></div><b>WATCH ↗</b></div></a><a class="explore-card" href="https://www.youtube.com/watch?v=-DFW8CKMvQo" target="_blank" rel="noopener"><div class="explore-image"><img src="https://i.ytimg.com/vi/-DFW8CKMvQo/hqdefault.jpg" alt="DANCING WITH A STRANGER"></div><div class="explore-meta"><span>04</span><div><h2>DANCING WITH A STRANGER</h2><p>MADHURA NAIK</p></div><b>WATCH ↗</b></div></a><a class="explore-card" href="https://www.youtube.com/watch?v=oHMU5AneTAg" target="_blank" rel="noopener"><div class="explore-image"><img src="https://i.ytimg.com/vi/oHMU5AneTAg/hqdefault.jpg" alt="MELLOW GYATSO"></div><div class="explore-meta"><span>05</span><div><h2>MELLOW GYATSO</h2><p>COOL SCHOOL PRODUCTIONS</p></div><b>WATCH ↗</b></div></a></section></main><footer class="site-footer simple-footer"><a class="simple-footer-brand" href="index.html">Cool School Productions</a><div class="simple-footer-links"><a href="https://www.instagram.com/coolschoolproductions/" target="_blank" rel="noopener">INSTAGRAM ↗</a><a href="https://www.youtube.com/@coolschoolproductions" target="_blank" rel="noopener">YOUTUBE ↗</a><a href="index.html#contact">CONTACT</a></div><span class="simple-footer-meta">INDEPENDENT RECORD LABEL · INDIA · <span id="year"></span></span></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Discover selected music and visual work from Cool School Productions.">
+<title>Discover — Cool School Productions</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body.discover-page{background:#0b0b0a;color:#f0ede5}
+.discover-shell{min-height:calc(100vh - 74px);padding:5vw 3.2vw 2.5vw;display:flex;flex-direction:column;justify-content:space-between;gap:6vw;position:relative;overflow:hidden}
+.discover-shell:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 4px),radial-gradient(circle at 16% 18%,rgba(255,255,255,.07),transparent 30%),radial-gradient(circle at 82% 72%,rgba(255,255,255,.04),transparent 34%)}
+.discover-top,.discover-feature,.discover-strip{position:relative;z-index:1}
+.discover-top{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;border-bottom:1px solid rgba(240,237,229,.18);padding-bottom:18px}
+.discover-kicker{font-size:8px;letter-spacing:.22em;color:#8f8b82}
+.discover-note{max-width:320px;font-family:Georgia,serif;font-size:17px;line-height:1.45;color:#bdb8ae;margin:0;text-align:right}
+.discover-feature{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr);gap:3vw;align-items:end}
+.discover-title-wrap{position:relative}
+.discover-title{font-family:Georgia,serif;font-size:clamp(86px,15vw,220px);line-height:.72;letter-spacing:-.085em;font-weight:400;margin:0}
+.discover-title em{font-weight:400;font-style:italic}
+.discover-feature-card{align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end;border-left:1px solid rgba(240,237,229,.18);padding-left:2.5vw}
+.discover-feature-card span{font-size:7px;letter-spacing:.18em;color:#77736b}
+.discover-feature-card h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(30px,3.3vw,50px);line-height:.95;letter-spacing:-.045em;margin:10px 0 12px}
+.discover-feature-card p{font-size:9px;letter-spacing:.12em;color:#8f8b82;margin:0 0 22px}
+.discover-feature-link{font-size:9px;letter-spacing:.18em;border-bottom:1px solid #5c5953;padding-bottom:6px;width:max-content}
+.discover-strip{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.discover-strip::-webkit-scrollbar{display:none}
+.discover-item{flex:1 0 220px;min-height:160px;border:1px solid rgba(240,237,229,.14);padding:16px;display:flex;flex-direction:column;justify-content:space-between;background:rgba(255,255,255,.015);transition:.25s ease}
+.discover-item:hover{transform:translateY(-4px);background:rgba(255,255,255,.035);border-color:rgba(240,237,229,.3)}
+.discover-item span{font-size:7px;letter-spacing:.18em;color:#77736b}
+.discover-item h3{font-family:Georgia,serif;font-weight:400;font-size:24px;line-height:1;margin:0}
+.discover-item small{font-size:7px;letter-spacing:.15em;color:#8f8b82}
+.discover-footer-line{display:flex;justify-content:space-between;align-items:center;font-size:7px;letter-spacing:.18em;color:#77736b}
+@media(max-width:760px){
+  .discover-shell{min-height:calc(100svh - 60px);padding:10vw 5vw 5vw;gap:12vw}
+  .discover-top{flex-direction:column;gap:14px}.discover-note{text-align:left;max-width:270px;font-size:16px}
+  .discover-feature{grid-template-columns:1fr;gap:10vw}.discover-title{font-size:22vw;line-height:.78}
+  .discover-feature-card{border-left:0;border-top:1px solid rgba(240,237,229,.18);padding:7vw 0 0}
+  .discover-feature-card h2{font-size:11vw}.discover-strip{margin-right:-5vw;padding-right:5vw}
+  .discover-item{flex-basis:72vw;min-height:180px}.discover-footer-line{gap:18px;align-items:flex-end}
+}
+</style>
+</head>
+<body class="discover-page">
+<header>
+  <a class="brand" href="index.html"><span>Cool School</span><small>productions</small></a>
+  <button id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">MENU</button>
+  <nav id="site-nav">
+    <a href="discover.html">DISCOVER</a>
+    <a href="index.html#submit">SUBMIT</a>
+    <a href="index.html#contact">CONTACT US</a>
+  </nav>
+</header>
+
+<main class="discover-shell">
+  <div class="discover-top">
+    <span class="discover-kicker">COOL SCHOOL PRODUCTIONS · SELECTED WORK</span>
+    <p class="discover-note">Find something you weren’t looking for.</p>
+  </div>
+
+  <section class="discover-feature">
+    <div class="discover-title-wrap">
+      <h1 class="discover-title">DISC<em>O</em>VER</h1>
+    </div>
+
+    <article class="discover-feature-card">
+      <span>FEATURED · 01</span>
+      <h2>BELIEF</h2>
+      <p>ARAYAN LAMA · MUSIC FILM</p>
+      <a class="discover-feature-link" href="https://www.youtube.com/watch?v=eNBL3RA2nes" target="_blank" rel="noopener">WATCH FILM ↗</a>
+    </article>
+  </section>
+
+  <section class="discover-strip" aria-label="Selected Cool School work">
+    <a class="discover-item" href="https://www.youtube.com/watch?v=MDRCj9q_BF8" target="_blank" rel="noopener">
+      <span>02 · MUSIC FILM</span>
+      <h3>ADDICTED</h3>
+      <small>ARAYAN LAMA · WATCH ↗</small>
+    </a>
+    <a class="discover-item" href="https://www.youtube.com/watch?v=rxdvPtSi1rs" target="_blank" rel="noopener">
+      <span>03 · ARTIST</span>
+      <h3>RYHAAN GIRI</h3>
+      <small>COOL SCHOOL PRODUCTIONS · WATCH ↗</small>
+    </a>
+    <a class="discover-item" href="https://www.youtube.com/watch?v=-DFW8CKMvQo" target="_blank" rel="noopener">
+      <span>04 · MUSIC FILM</span>
+      <h3>DANCING WITH A STRANGER</h3>
+      <small>MADHURA NAIK · WATCH ↗</small>
+    </a>
+    <a class="discover-item" href="https://www.youtube.com/watch?v=oHMU5AneTAg" target="_blank" rel="noopener">
+      <span>05 · ARTIST</span>
+      <h3>MELLOW GYATSO</h3>
+      <small>COOL SCHOOL PRODUCTIONS · WATCH ↗</small>
+    </a>
+  </section>
+
+  <div class="discover-footer-line">
+    <span>INDEPENDENT RECORD LABEL · INDIA</span>
+    <span>SCROLL / TAP TO DISCOVER →</span>
+  </div>
+</main>
+
+<footer class="site-footer simple-footer">
+  <a class="simple-footer-brand" href="index.html">Cool School Productions</a>
+  <div class="simple-footer-links">
+    <a href="https://www.instagram.com/coolschoolproductions/" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+    <a href="https://www.youtube.com/@coolschoolproductions" target="_blank" rel="noopener">YOUTUBE ↗</a>
+    <a href="index.html#contact">CONTACT</a>
+  </div>
+  <span class="simple-footer-meta">INDEPENDENT RECORD LABEL · INDIA · <span id="year"></span></span>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
