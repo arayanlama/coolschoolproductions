@@ -748,3 +748,69 @@ nav{align-items:center}
  background:linear-gradient(118deg,rgba(255,255,255,.035),transparent 24%,transparent 78%,rgba(255,255,255,.012));
  mix-blend-mode:screen;
 }
+
+
+/* Discover — listening room refinement */
+#discover.vinyl-discover{
+ isolation:isolate;
+ background:
+  radial-gradient(circle at 23% 31%,rgba(216,199,165,.105),transparent 26%),
+  radial-gradient(circle at 77% 70%,rgba(255,255,255,.025),transparent 25%),
+  linear-gradient(138deg,#17140f 0%,#0a0908 58%,#12100d 100%);
+}
+#discover.vinyl-discover:after{
+ content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+ background:linear-gradient(112deg,rgba(255,255,255,.045),transparent 22%,transparent 72%,rgba(216,199,165,.025));
+}
+#discover.vinyl-discover>*{position:relative;z-index:1}
+#discover .discover-label{
+ letter-spacing:.22em;opacity:.62;
+}
+#discover .vinyl-audio-view{
+ align-items:center;
+ gap:clamp(42px,7vw,110px);
+}
+#discover .audio-record{
+ transform:scale(1.025);
+ filter:drop-shadow(0 30px 34px rgba(0,0,0,.34));
+}
+#discover .audio-deck{
+ max-width:620px;
+ padding-block:clamp(18px,3vw,42px);
+}
+#discover .audio-kicker{
+ letter-spacing:.2em;opacity:.55;
+}
+#discover .audio-title{
+ max-width:11ch;
+ text-wrap:balance;
+}
+#discover .audio-artist{
+ opacity:.68;
+}
+#discover .audio-progress{
+ margin-top:clamp(28px,4vw,48px);
+}
+#discover .audio-progress-track{
+ height:2px;
+ background:rgba(241,238,231,.16);
+}
+#discover .audio-controls button{
+ transition:transform .2s ease,background .2s ease,border-color .2s ease;
+}
+#discover .audio-controls button:hover{
+ transform:translateY(-2px);
+}
+#discover .audio-play{
+ box-shadow:0 10px 28px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.12);
+}
+#discover .audio-tracklist{
+ margin-top:clamp(24px,4vw,46px);
+ border-top-color:rgba(241,238,231,.13);
+}
+@media(max-width:760px){
+ #discover .vinyl-audio-view{gap:34px}
+ #discover .audio-record{transform:none}
+ #discover .audio-deck{padding-block:10px}
+ #discover .audio-title{max-width:none}
+}
