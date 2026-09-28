@@ -748,3 +748,33 @@ nav{align-items:center}
  background:linear-gradient(118deg,rgba(255,255,255,.035),transparent 24%,transparent 78%,rgba(255,255,255,.012));
  mix-blend-mode:screen;
 }
+
+
+/* Production stability layer — preserves approved visual system */
+html{scroll-behavior:smooth;scroll-padding-top:68px}
+body{overflow-x:hidden}
+a,button,input{touch-action:manipulation}
+button{cursor:pointer}
+:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.hero-track{overscroll-behavior-x:contain}
+.hero-track figure{scroll-snap-stop:always}
+.opening-mark,.opening-message,.vinyl-audio-view,.audio-deck{min-width:0}
+.audio-title,.audio-deck h2,.home-contact h2,.submit-simple h2{overflow-wrap:break-word}
+.audio-range{min-width:0}
+@media(max-width:760px){
+ html{scroll-padding-top:60px}
+ header{z-index:1000}
+ header nav{z-index:1001;max-height:calc(100svh - 60px);overflow:auto}
+ .opening{overflow:hidden}
+ .hero-track{width:100%}
+ .artist-link{min-width:100%}
+ .vinyl-discover{overflow:hidden}
+ .vinyl-audio-view{max-width:100%}
+ .audio-deck{width:100%}
+ .audio-progress{width:100%}
+ .home-contact-row,.home-contact-links,.submit-simple-inner{min-width:0}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
