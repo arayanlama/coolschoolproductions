@@ -1,6 +1,6 @@
 const menu=document.querySelector('#menu'),nav=document.querySelector('#site-nav')||document.querySelector('header nav');
 menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close menu':'Open menu')});
-document.querySelectorAll('header nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false');menu?.setAttribute('aria-label','Open menu')}));
+const closeMenu=()=>{nav?.classList.remove('open');menu?.setAttribute('aria-expanded','false');menu?.setAttribute('aria-label','Open menu')};document.querySelectorAll('header nav a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav?.classList.contains('open')){closeMenu();menu?.focus()}});
 const year=document.querySelector('#year');if(year)year.textContent=new Date().getFullYear();
 
 const heroTrack=document.querySelector('.hero-track');
@@ -20,13 +20,19 @@ if(heroTrack){
   heroTrack.addEventListener('pointerup',start);
   heroTrack.addEventListener('mouseenter',()=>clearInterval(timer));
   heroTrack.addEventListener('mouseleave',start);
+  const count=document.querySelector('.hero-count');
+  const updateCount=()=>{if(count)count.textContent=String(current+1).padStart(2,'0')+' — '+String(slides.length).padStart(2,'0')};
+  document.querySelector('.hero-prev')?.addEventListener('click',()=>{goTo(current-1);updateCount();start()});
+  document.querySelector('.hero-next')?.addEventListener('click',()=>{goTo(current+1);updateCount();start()});
+  heroTrack.addEventListener('scrollend',updateCount);
+  updateCount();
   start();
 }
 
 function onYouTubeIframeAPIReady(){
-  const hidden=document.createElement('div');hidden.id='vinyl-audio-youtube';hidden.style.cssText='position:fixed;left:-9999px;top:-9999px;width:200px;height:113px;overflow:hidden;opacity:0;pointer-events:none';document.body.appendChild(hidden);audioPlayer=new YT.Player('vinyl-audio-youtube',{height:'113',width:'200',videoId:audioIds[0],playerVars:{playsinline:1,rel:0},events:{onReady:()=>{syncAudioUI();audioTimer=setInterval(syncAudioUI,500)},onStateChange:e=>{const p=e.data===YT.PlayerState.PLAYING;audioRecord?.classList.toggle('playing',p);if(audioPlay){audioPlay.textContent=p?'Ⅱ':'▶';audioPlay.setAttribute('aria-label',p?`Pause ${audioArtists[audioIndex]}`:`Play ${audioArtists[audioIndex]}`)}if(e.data===YT.PlayerState.ENDED)loadAudio(audioIndex+1)}}});
+  const hidden=document.createElement('div');hidden.id='vinyl-audio-youtube';hidden.style.cssText='position:fixed;left:-9999px;top:-9999px;width:200px;height:113px;overflow:hidden;opacity:0;pointer-events:none';document.body.appendChild(hidden);audioPlayer=new YT.Player('vinyl-audio-youtube',{height:'113',width:'200',videoId:audioIds[0],playerVars:{playsinline:1,rel:0},events:{onReady:()=>{if(audioKicker)audioKicker.textContent='NOW PLAYING';syncAudioUI();audioTimer=setInterval(syncAudioUI,500)},onStateChange:e=>{const p=e.data===YT.PlayerState.PLAYING;audioRecord?.classList.toggle('playing',p);if(audioPlay){audioPlay.textContent=p?'Ⅱ':'▶';audioPlay.setAttribute('aria-label',p?`Pause ${audioArtists[audioIndex]}`:`Play ${audioArtists[audioIndex]}`)}if(e.data===YT.PlayerState.ENDED)loadAudio(audioIndex+1)}}});
 }
-if(document.querySelector('.vinyl-discover')){const yt=document.createElement('script');yt.src='https://www.youtube.com/iframe_api';document.head.appendChild(yt);}
+if(document.querySelector('.vinyl-discover')){const yt=document.createElement('script');yt.src='https://www.youtube.com/iframe_api';yt.onerror=()=>{if(audioKicker)audioKicker.textContent='PLAYER UNAVAILABLE · OPEN ON YOUTUBE';audioPlay?.setAttribute('disabled','')};document.head.appendChild(yt);}
 
 const musicSection=document.querySelector('.vinyl-discover');
 const vinylAtmosphere=document.querySelector('.vinyl-atmosphere'),audioRecord=document.querySelector('.audio-record'),audioArt=document.querySelector('.audio-art'),audioPlay=document.querySelector('.audio-play'),audioRange=document.querySelector('.audio-range'),audioCurrent=document.querySelector('.audio-time.current'),audioDuration=document.querySelector('.audio-time.duration'),audioKicker=document.querySelector('.audio-kicker'),audioTitle=document.querySelector('.audio-deck h2'),audioSubtitle=document.querySelector('.audio-subtitle'),audioCount=document.querySelector('.audio-track-count');
@@ -61,3 +67,6 @@ document.querySelectorAll('.artist-link[data-track]').forEach(card=>{
  card.addEventListener('click',openArtistRecord);
  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openArtistRecord()}});
 });
+
+// Keep in-page anchors visible below the sticky header.
+if(location.hash){requestAnimationFrame(()=>document.querySelector(location.hash)?.scrollIntoView({block:'start'}))}
