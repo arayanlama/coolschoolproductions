@@ -1245,3 +1245,33 @@ button,a{ -webkit-tap-highlight-color:transparent }
  .journal-entry-copy p{font-size:17px}
  .journal-end{padding:26px 6vw 64px;flex-direction:column;gap:18px}
 }
+
+
+/* Unified Submit + Contact */
+.submit-contact{padding:clamp(52px,6vw,90px) 4vw!important;min-height:auto!important}
+.submit-contact-top{display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line);font-size:8px;letter-spacing:.18em;color:#77736b}
+.submit-contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(360px,.8fr);gap:8vw;align-items:end;padding-top:clamp(70px,9vw,130px)}
+.submit-contact-copy h2{font-family:Georgia,serif;font-size:clamp(76px,9vw,142px);font-weight:400;line-height:.8;letter-spacing:-.07em;margin:0 0 38px}
+.submit-contact-copy>p{font-family:Georgia,serif;font-size:clamp(17px,1.5vw,21px);line-height:1.55;color:#77736b;max-width:600px;margin:0 0 38px}
+.submit-contact-copy .cta-primary{width:min(100%,330px)}
+.submit-contact-actions{border-top:1px solid var(--line)}
+.submit-contact-email{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end;padding:22px 0;border-bottom:1px solid var(--line)}
+.submit-contact-email>span{grid-column:1/-1;font-size:8px;letter-spacing:.17em;color:#77736b}
+.submit-contact-email b{font-family:Georgia,serif;font-size:clamp(16px,1.4vw,21px);font-weight:400;overflow-wrap:anywhere}
+.submit-contact-email i{font-style:normal;font-size:19px}
+.submit-contact-social{display:grid;grid-template-columns:1fr 1fr}
+.submit-contact-social a{display:grid;grid-template-columns:22px 1fr auto;gap:11px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);font-size:8px;letter-spacing:.15em}
+.submit-contact-social a:first-child{padding-right:18px}
+.submit-contact-social a:last-child{padding-left:18px;border-left:1px solid var(--line)}
+.submit-contact-social svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}
+.submit-contact-social b{font-size:13px;font-weight:400}
+@media(max-width:760px){
+ .submit-contact{padding:60px 6vw 72px!important}
+ .submit-contact-top span:last-child{display:none}
+ .submit-contact-grid{grid-template-columns:1fr;gap:62px;padding-top:70px}
+ .submit-contact-copy h2{font-size:clamp(64px,18vw,104px);margin-bottom:30px}
+ .submit-contact-copy>p{font-size:17px}
+ .submit-contact-copy .cta-primary{width:100%;max-width:none}
+ .submit-contact-social{grid-template-columns:1fr}
+ .submit-contact-social a:first-child,.submit-contact-social a:last-child{padding:18px 0;border-left:0}
+}
