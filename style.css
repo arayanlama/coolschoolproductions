@@ -996,3 +996,17 @@ header{position:relative;z-index:1000}
   padding-bottom:0;
  }
 }
+
+
+/* Functional controls and deep-link behavior */
+.hero-nav{display:flex;align-items:center;gap:8px}
+.hero-nav button{width:28px;height:28px;border:1px solid rgba(255,255,255,.45);border-radius:50%;background:rgba(10,10,10,.22);color:#fff;font:inherit;line-height:1;padding:0}
+.hero-nav button:hover{background:rgba(255,255,255,.14)}
+.hero-count{min-width:58px;text-align:center}
+.explore-card{scroll-margin-top:90px}
+.audio-play:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:760px){
+ .hero-nav{gap:5px}
+ .hero-nav button{width:26px;height:26px}
+ .explore-card{scroll-margin-top:70px}
+}
