@@ -1010,3 +1010,22 @@ header{position:relative;z-index:1000}
  .hero-nav button{width:26px;height:26px}
  .explore-card{scroll-margin-top:70px}
 }
+
+
+/* Primary submission CTA */
+.cta-panel>p{max-width:520px;margin:22px 0 0;font-family:Georgia,serif;font-size:clamp(16px,1.5vw,20px);line-height:1.55;color:#69655d}
+.cta-actions{display:flex;align-items:center;gap:12px;margin-top:38px;flex-wrap:wrap}
+.cta-primary{display:inline-flex!important;align-items:center;justify-content:space-between;gap:44px;min-width:min(100%,330px);padding:18px 20px!important;border:1px solid var(--black)!important;background:var(--black);color:var(--cream)!important;font-size:9px!important;letter-spacing:.16em;transition:background .2s,color .2s}
+.cta-primary:hover{background:transparent;color:var(--black)!important}
+.cta-primary svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.5}
+.cta-socials{display:flex;gap:8px}
+.cta-socials a{width:52px!important;height:52px;display:grid!important;place-items:center;padding:0!important;border:1px solid rgba(11,11,10,.28)!important;border-radius:50%;transition:background .2s,color .2s,border-color .2s}
+.cta-socials a:hover{background:var(--black);color:var(--cream);border-color:var(--black)!important}
+.cta-socials svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}
+.cta-socials a:last-child svg path:first-child{fill:none}
+@media(max-width:600px){
+ .cta-actions{align-items:stretch}
+ .cta-primary{width:100%;min-width:0}
+ .cta-socials{width:100%}
+ .cta-socials a{flex:1;border-radius:0}
+}
