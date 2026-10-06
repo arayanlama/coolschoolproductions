@@ -1188,3 +1188,29 @@ button,a{ -webkit-tap-highlight-color:transparent }
  .opening-message{padding-inline:4vw}
  .vinyl-audio-view,.submit-simple,.contact-us-panel,.simple-footer{padding-left:4vw;padding-right:4vw}
 }
+
+
+/* Refined contact actions */
+.contact-us-social{gap:0}
+.contact-us-social a{display:grid;grid-template-columns:24px 1fr auto;align-items:center;gap:12px;text-align:left!important}
+.contact-us-social svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}
+.contact-us-social b{font-weight:400;font-size:13px}
+.contact-us-email>span:last-child{font-size:20px;transition:transform .2s}
+.contact-us-email:hover>span:last-child{transform:translate(3px,-3px)}
+.contact-us-social a:hover b{transform:translate(2px,-2px)}
+.contact-us-social b{transition:transform .2s}
+
+/* Small About bridge */
+.about-mini{background:#0b0b0a;color:var(--cream);padding:clamp(54px,6vw,90px) 4vw}
+.about-mini-label{font-size:8px;letter-spacing:.18em;color:#77736b;padding-bottom:18px;border-bottom:1px solid #292927}
+.about-mini-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.65fr);gap:8vw;align-items:end;padding-top:clamp(60px,8vw,110px)}
+.about-mini h2{font-family:Georgia,serif;font-size:clamp(48px,6.2vw,96px);font-weight:400;line-height:.88;letter-spacing:-.055em;margin:0}
+.about-mini-copy p{font-family:Georgia,serif;font-size:clamp(16px,1.4vw,20px);line-height:1.55;color:#aaa69d;margin:0 0 40px;max-width:470px}
+.about-mini-copy span{display:block;padding-top:15px;border-top:1px solid #292927;font-size:8px;letter-spacing:.17em;color:#77736b}
+@media(max-width:760px){
+ .contact-us-social a{min-height:58px;padding:16px 0}
+ .about-mini{padding:58px 6vw 68px}
+ .about-mini-grid{grid-template-columns:1fr;gap:52px;padding-top:64px}
+ .about-mini h2{font-size:clamp(50px,14vw,76px)}
+ .about-mini-copy p{font-size:17px;margin-bottom:32px}
+}
