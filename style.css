@@ -1078,3 +1078,26 @@ header{position:relative;z-index:1000}
  }
  .cta-socials svg{width:19px;height:19px;display:block}
 }
+
+
+/* Contact Us — directly after submissions */
+.contact-us-panel{background:var(--cream);color:var(--black);padding:clamp(46px,6vw,92px) 4vw;border-top:1px solid var(--line)}
+.contact-us-label{font-size:8px;letter-spacing:.18em;color:#77736b;margin-bottom:clamp(54px,8vw,110px)}
+.contact-us-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.78fr);gap:8vw;align-items:end}
+.contact-us-grid h2{font-family:Georgia,serif;font-size:clamp(64px,8vw,126px);font-weight:400;line-height:.82;letter-spacing:-.065em;margin:0}
+.contact-us-grid p{font-family:Georgia,serif;font-size:18px;line-height:1.55;color:#77736b;max-width:390px;margin:28px 0 0}
+.contact-us-actions{border-top:1px solid var(--line)}
+.contact-us-email{display:grid;grid-template-columns:1fr auto;gap:10px;padding:20px 0;border-bottom:1px solid var(--line);align-items:end}
+.contact-us-email>span:first-child{grid-column:1/-1;font-size:8px;letter-spacing:.17em;color:#77736b}
+.contact-us-email b{font-family:Georgia,serif;font-size:clamp(16px,1.4vw,21px);font-weight:400;overflow-wrap:anywhere}
+.contact-us-social{display:grid;grid-template-columns:1fr 1fr}
+.contact-us-social a{padding:18px 0;font-size:8px;letter-spacing:.16em;border-bottom:1px solid var(--line)}
+.contact-us-social a+ a{text-align:right}
+@media(max-width:760px){
+ .contact-us-panel{padding:54px 6vw 64px}
+ .contact-us-label{margin-bottom:70px}
+ .contact-us-grid{grid-template-columns:1fr;gap:56px}
+ .contact-us-grid h2{font-size:18vw}
+ .contact-us-grid p{font-size:17px;margin-top:22px}
+ .contact-us-social{gap:16px}
+}
