@@ -1054,3 +1054,27 @@ header{position:relative;z-index:1000}
  .closing-bottom>div{flex-direction:column;gap:12px;text-align:right}
  .closing-top span:last-child{display:none}
 }
+
+
+/* iPhone CTA icon correction */
+@media(max-width:600px){
+ .cta-panel,.cta-actions,.cta-socials{min-width:0;max-width:100%}
+ .cta-actions{display:block;width:100%}
+ .cta-primary{box-sizing:border-box;width:100%;max-width:100%;min-width:0;margin:0}
+ .cta-socials{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  width:100%;
+  margin-top:10px;
+ }
+ .cta-socials a{
+  box-sizing:border-box;
+  width:100%!important;
+  min-width:0;
+  height:58px;
+  border-radius:0;
+  padding:0!important;
+ }
+ .cta-socials svg{width:19px;height:19px;display:block}
+}
