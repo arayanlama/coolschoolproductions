@@ -1101,3 +1101,90 @@ header{position:relative;z-index:1000}
  .contact-us-grid p{font-size:17px;margin-top:22px}
  .contact-us-social{gap:16px}
 }
+
+
+/* Responsive production layer — phones, tablets, desktop */
+html{width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%}
+body{width:100%;min-width:0;overflow-x:hidden}
+img,svg{max-width:100%}
+header{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+main,section,footer{max-width:100%}
+button,a{ -webkit-tap-highlight-color:transparent }
+@media(pointer:coarse){button,.hero-nav button,.audio-controls button{min-width:44px;min-height:44px}}
+
+/* Tablet / compact desktop */
+@media(min-width:761px) and (max-width:1100px){
+ header{height:68px;padding-inline:28px}
+ .opening{height:auto;min-height:calc(100svh - 68px);max-height:none;grid-template-columns:1fr 1fr}
+ .opening-mark,.opening-message{min-height:clamp(620px,82svh,820px)}
+ .opening-message{padding:32px}
+ .opening-message .hero-statement-body h1{font-size:clamp(58px,7.2vw,82px);line-height:.84}
+ .hero-statement-foot{grid-template-columns:1fr!important;gap:24px!important}
+ .vinyl-audio-view{padding-inline:4vw}
+ .cta-panel>h2{font-size:clamp(76px,10vw,112px)}
+ .contact-us-grid{grid-template-columns:minmax(0,1fr) minmax(300px,.8fr);gap:5vw}
+ .simple-footer{padding-inline:4vw}
+}
+
+/* Phones */
+@media(max-width:760px){
+ header{height:60px;padding-inline:max(18px,env(safe-area-inset-left));position:sticky}
+ .brand span{font-size:19px}
+ .brand small{font-size:6px}
+ #menu{display:block}
+ header nav{left:0;right:0;width:100%;padding:24px max(20px,env(safe-area-inset-left));box-shadow:0 14px 30px rgba(0,0,0,.08)}
+ header nav a{min-height:44px;display:flex;align-items:center}
+ .opening{display:block;min-height:0}
+ .opening-mark{height:min(72svh,660px);min-height:480px;width:100%}
+ .opening-message{min-height:auto!important;height:auto!important;padding:42px 6vw 54px!important;overflow:visible!important}
+ .hero-statement-top{gap:12px}
+ .hero-statement-top>span{font-size:7px}
+ .opening-message .hero-statement-body{padding:72px 0 0!important}
+ .opening-message .hero-statement-body h1{font-size:clamp(58px,18vw,92px);line-height:.82;margin-bottom:42px}
+ .hero-statement-foot{grid-template-columns:1fr!important;gap:28px!important}
+ .hero-statement-foot .prayer{font-size:17px}
+ .showcase-hint{padding-inline:16px}
+ .hero-nav button{width:36px!important;height:36px!important}
+ .vinyl-discover{min-height:0}
+ .vinyl-audio-view{min-height:auto;padding:58px 6vw 64px}
+ .audio-record-wrap{width:min(72vw,310px);margin-inline:auto}
+ .audio-deck{width:100%;padding-top:42px}
+ .audio-heading{gap:16px}
+ .audio-deck h2{font-size:clamp(42px,12vw,66px)}
+ .audio-bottom{gap:16px}
+ .submit-simple{padding:82px 6vw!important;min-height:0!important}
+ .cta-panel>h2{font-size:clamp(64px,18vw,104px)!important;line-height:.82!important;overflow-wrap:normal}
+ .cta-panel>p{font-size:17px;max-width:32em}
+ .cta-actions{margin-top:34px}
+ .cta-primary{min-height:64px}
+ .cta-socials a{height:58px;min-height:58px}
+ .contact-us-panel{padding:68px 6vw 72px}
+ .contact-us-label{margin-bottom:64px}
+ .contact-us-grid{grid-template-columns:1fr;gap:50px}
+ .contact-us-grid h2{font-size:clamp(64px,18vw,100px)}
+ .contact-us-email{grid-template-columns:minmax(0,1fr) auto}
+ .contact-us-email b{font-size:16px}
+ .simple-footer{min-height:0!important;padding:52px 6vw max(30px,env(safe-area-inset-bottom))!important}
+ .simple-footer-links{flex-wrap:wrap;gap:18px}
+}
+
+/* Narrow phones */
+@media(max-width:390px){
+ .opening-mark{height:64svh;min-height:440px}
+ .showcase-hint>span{max-width:120px;line-height:1.35}
+ .opening-message{padding-inline:20px!important}
+ .opening-message .hero-statement-body h1{font-size:17vw}
+ .submit-simple,.contact-us-panel{padding-left:20px!important;padding-right:20px!important}
+ .cta-panel>h2{font-size:17vw!important}
+ .cta-socials{gap:6px}
+ .contact-us-social{grid-template-columns:1fr;gap:0}
+ .contact-us-social a+ a{text-align:left}
+ .contact-us-email b{font-size:14px}
+}
+
+/* Wide screens */
+@media(min-width:1500px){
+ header{padding-inline:4vw}
+ .opening-message{padding-inline:4vw}
+ .vinyl-audio-view,.submit-simple,.contact-us-panel,.simple-footer{padding-left:4vw;padding-right:4vw}
+}
