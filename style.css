@@ -1214,3 +1214,34 @@ button,a{ -webkit-tap-highlight-color:transparent }
  .about-mini h2{font-size:clamp(50px,14vw,76px)}
  .about-mini-copy p{font-size:17px;margin-bottom:32px}
 }
+
+
+/* Cool School Journal */
+.journal-body{background:var(--cream);color:var(--black)}
+.journal-page{min-height:100svh}
+.journal-hero{padding:clamp(100px,12vw,180px) 4vw clamp(70px,9vw,130px);border-bottom:1px solid var(--line)}
+.journal-meta{display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line);font-size:8px;letter-spacing:.18em;color:#77736b}
+.journal-hero h1{font-family:Georgia,serif;font-size:clamp(78px,11.5vw,180px);font-weight:400;line-height:.77;letter-spacing:-.07em;margin:clamp(70px,9vw,130px) 0 48px;max-width:8.5ch}
+.journal-hero>p{font-family:Georgia,serif;font-size:clamp(18px,1.7vw,25px);line-height:1.5;color:#77736b;max-width:620px;margin:0}
+.journal-list{padding:0 4vw}
+.journal-entry{display:grid;grid-template-columns:minmax(170px,.35fr) minmax(0,1fr);gap:6vw;padding:clamp(48px,6vw,90px) 0;border-bottom:1px solid var(--line)}
+.journal-entry-meta{display:grid;grid-template-columns:42px 1fr;align-content:start;gap:12px 18px;font-size:8px;letter-spacing:.16em;color:#77736b}
+.journal-entry-meta span:last-child{grid-column:2}
+.journal-entry-copy{max-width:900px}
+.journal-entry-copy h2{font-family:Georgia,serif;font-size:clamp(48px,6vw,92px);font-weight:400;line-height:.9;letter-spacing:-.055em;margin:0 0 30px}
+.journal-entry-copy p{font-family:Georgia,serif;font-size:clamp(17px,1.5vw,21px);line-height:1.55;color:#77736b;max-width:650px;margin:0 0 38px}
+.journal-status{font-size:8px;letter-spacing:.16em;color:#77736b}
+.journal-end{display:flex;justify-content:space-between;gap:24px;padding:30px 4vw 80px;font-size:8px;letter-spacing:.17em}
+@media(max-width:760px){
+ .journal-hero{padding:92px 6vw 72px}
+ .journal-meta span:last-child{display:none}
+ .journal-hero h1{font-size:clamp(68px,20vw,108px);margin:70px 0 36px}
+ .journal-hero>p{font-size:18px}
+ .journal-list{padding-inline:6vw}
+ .journal-entry{grid-template-columns:1fr;gap:44px;padding:58px 0}
+ .journal-entry-meta{grid-template-columns:36px 1fr auto}
+ .journal-entry-meta span:last-child{grid-column:auto}
+ .journal-entry-copy h2{font-size:clamp(50px,14vw,76px)}
+ .journal-entry-copy p{font-size:17px}
+ .journal-end{padding:26px 6vw 64px;flex-direction:column;gap:18px}
+}
