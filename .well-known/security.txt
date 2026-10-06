@@ -1,0 +1,5 @@
+Contact: mailto:coolschoolproduction@gmail.com
+Expires: 2027-10-07T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://coolschoolproductions.arayanlama19.workers.dev/.well-known/security.txt
+Policy: https://coolschoolproductions.arayanlama19.workers.dev/legal.html
