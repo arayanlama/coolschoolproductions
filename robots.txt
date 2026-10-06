@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coolschoolproductions.arayanlama19.workers.dev/sitemap.xml
