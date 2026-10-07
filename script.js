@@ -83,21 +83,29 @@ document.querySelectorAll('.artist-link[data-track]').forEach(card=>{
 if(location.hash){requestAnimationFrame(()=>document.querySelector(location.hash)?.scrollIntoView({block:'start'}))}
 
 
+
 document.querySelectorAll('[data-submission-form]').forEach(form=>{
  const status=form.querySelector('.submission-status'),button=form.querySelector('button[type="submit"]');
+ const file=form.querySelector('input[type="file"]'),fileName=form.querySelector('[data-file-name]');
+ file?.addEventListener('change',()=>{
+  const chosen=file.files?.[0];
+  if(fileName)fileName.textContent=chosen?chosen.name:'MP3, WAV, M4A, AAC OR FLAC · MAX 50 MB';
+ });
  form.addEventListener('submit',async e=>{
   e.preventDefault();
-  if(status)status.textContent='SENDING…';
+  const chosen=file?.files?.[0];
+  if(!chosen){if(status)status.textContent='CHOOSE AN AUDIO FILE.';return}
+  if(chosen.size>50*1024*1024){if(status)status.textContent='FILE MUST BE 50 MB OR SMALLER.';return}
+  if(status)status.textContent='UPLOADING…';
   if(button)button.disabled=true;
-  const data=Object.fromEntries(new FormData(form).entries());
   try{
-   const res=await fetch('/api/submissions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+   const res=await fetch('/api/submissions',{method:'POST',body:new FormData(form)});
    const body=await res.json().catch(()=>({}));
    if(!res.ok)throw new Error(body.error||'Could not submit.');
    form.reset();
+   if(fileName)fileName.textContent='MP3, WAV, M4A, AAC OR FLAC · MAX 50 MB';
    if(status)status.textContent='RECEIVED. THANK YOU.';
-  }catch(err){
-   if(status)status.textContent=err.message||'COULD NOT SUBMIT. PLEASE TRY AGAIN.';
-  }finally{if(button)button.disabled=false}
+  }catch(err){if(status)status.textContent=err.message||'COULD NOT SUBMIT. PLEASE TRY AGAIN.'}
+  finally{if(button)button.disabled=false}
  });
 });
