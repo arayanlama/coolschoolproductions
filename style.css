@@ -1767,3 +1767,30 @@ header nav a:hover,header nav a[aria-current="page"]{color:var(--accent)!importa
  inset 0 0 0 1px rgba(241,236,226,.045)!important
 }
 
+
+
+/* Simple music submission form */
+.submission-form{margin-top:28px}
+.submission-fields{border-top:1px solid var(--hairline)}
+.submission-form label{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center;border-bottom:1px solid var(--hairline);padding:15px 0}
+.submission-form label>span{font-size:8px;letter-spacing:.16em;color:var(--stone)}
+.submission-form label i{font-style:normal;color:var(--stone-soft)}
+.submission-form input,.submission-form textarea{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font:18px/1.35 Georgia,serif;padding:5px 0;border-radius:0;resize:vertical}
+.submission-form input::placeholder{color:var(--stone-soft)}
+.submission-form button{margin-top:24px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:15px 19px;font:9px Arial,sans-serif;letter-spacing:.15em;cursor:pointer}
+.submission-form button:disabled{opacity:.45;cursor:wait}
+.submission-status{min-height:1.2em;margin:14px 0 0!important;font:8px Arial,sans-serif!important;letter-spacing:.14em!important;color:var(--stone)!important}
+.submission-page{background:var(--paper);color:var(--ink);min-height:calc(100svh - 74px);padding:0 4vw 9vw}
+.submission-page-head{padding:65px 0 75px;border-bottom:1px solid var(--hairline)}
+.submission-page-head>span{font-size:9px;letter-spacing:.18em;color:var(--stone)}
+.submission-page-head h1{font:400 clamp(74px,10vw,154px)/.79 Georgia,serif;letter-spacing:-.07em;margin:70px 0 40px}
+.submission-page-head p{font:20px/1.5 Georgia,serif;color:var(--stone);margin:0}
+.submission-page-form{max-width:820px;margin-left:auto;padding-top:70px}
+@media(max-width:760px){
+ .submission-form label{grid-template-columns:1fr;gap:8px;padding:14px 0}
+ .submission-form input,.submission-form textarea{font-size:17px}
+ .submission-page{padding:0 6vw 80px;min-height:0}
+ .submission-page-head{padding:48px 0 58px}
+ .submission-page-head h1{font-size:clamp(64px,18vw,100px);margin:55px 0 30px}
+ .submission-page-form{padding-top:50px}
+}
