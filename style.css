@@ -2081,3 +2081,16 @@ header nav a:hover,header nav a[aria-current="page"]{color:var(--accent)!importa
  .artist-links span{width:100%;padding-bottom:5px}
  .artist-links a{padding-top:9px;padding-bottom:13px}
 }
+
+
+/* Journal authorship + closing editorial CTA */
+.review-byline{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.review-byline span,.review-byline time{font:8px Arial,sans-serif;letter-spacing:.18em}
+.review-byline span{color:var(--ink)}
+.review-byline time{color:var(--stone)}
+.review-end>div small{display:block;margin-top:18px;font:9px/1.5 Arial,sans-serif;letter-spacing:.12em;color:rgba(241,236,226,.68)}
+.review-end>a{white-space:nowrap}
+@media(max-width:760px){
+ .review-byline{align-items:flex-start}
+ .review-end>div small{max-width:260px}
+}
