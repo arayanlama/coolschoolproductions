@@ -109,3 +109,26 @@ document.querySelectorAll('[data-submission-form]').forEach(form=>{
   finally{if(button)button.disabled=false}
  });
 });
+
+
+// Journal reading progress + section state
+(()=>{
+ const progress=document.querySelector('.reading-progress span');
+ const links=[...document.querySelectorAll('.review-index a')];
+ const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+ if(!progress&&!sections.length)return;
+ const update=()=>{
+  if(progress){
+   const max=document.documentElement.scrollHeight-innerHeight;
+   progress.style.width=(max>0?Math.min(100,Math.max(0,scrollY/max*100)):0)+'%';
+  }
+  if(sections.length){
+   let current=sections[0];
+   for(const section of sections){if(section.getBoundingClientRect().top<=innerHeight*.36)current=section}
+   links.forEach(a=>a.classList.toggle('is-active',a.getAttribute('href')==='#'+current.id));
+  }
+ };
+ addEventListener('scroll',update,{passive:true});
+ addEventListener('resize',update);
+ update();
+})();
