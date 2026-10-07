@@ -81,3 +81,23 @@ document.querySelectorAll('.artist-link[data-track]').forEach(card=>{
 
 // Keep in-page anchors visible below the sticky header.
 if(location.hash){requestAnimationFrame(()=>document.querySelector(location.hash)?.scrollIntoView({block:'start'}))}
+
+
+document.querySelectorAll('[data-submission-form]').forEach(form=>{
+ const status=form.querySelector('.submission-status'),button=form.querySelector('button[type="submit"]');
+ form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(status)status.textContent='SENDING…';
+  if(button)button.disabled=true;
+  const data=Object.fromEntries(new FormData(form).entries());
+  try{
+   const res=await fetch('/api/submissions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+   const body=await res.json().catch(()=>({}));
+   if(!res.ok)throw new Error(body.error||'Could not submit.');
+   form.reset();
+   if(status)status.textContent='RECEIVED. THANK YOU.';
+  }catch(err){
+   if(status)status.textContent=err.message||'COULD NOT SUBMIT. PLEASE TRY AGAIN.';
+  }finally{if(button)button.disabled=false}
+ });
+});
