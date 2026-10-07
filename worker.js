@@ -1,54 +1,41 @@
+const MAX_AUDIO_BYTES = 50 * 1024 * 1024;
+const AUDIO_TYPES = new Set(["audio/mpeg","audio/wav","audio/x-wav","audio/mp4","audio/x-m4a","audio/aac","audio/flac","audio/x-flac"]);
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname !== "/api/submissions") return env.ASSETS.fetch(request);
+    if (request.method !== "POST") return json({ error: "Method not allowed." }, 405);
+    if (!env.DB || !env.MUSIC) return json({ error: "Submissions storage is not configured yet." }, 503);
 
-    if (url.pathname === "/api/submissions") {
-      if (request.method !== "POST") {
-        return json({ error: "Method not allowed." }, 405);
-      }
+    let form;
+    try { form = await request.formData(); }
+    catch { return json({ error: "Invalid submission." }, 400); }
 
-      if (!env.DB) return json({ error: "Submissions database is not configured yet." }, 503);
+    const clean=(value,max)=>String(value??"").trim().slice(0,max);
+    const name=clean(form.get("name"),100);
+    const contact=clean(form.get("contact"),160);
+    const artist=clean(form.get("artist"),120);
+    const note=clean(form.get("note"),1000);
+    const file=form.get("music_file");
 
-      let body;
-      try { body = await request.json(); }
-      catch { return json({ error: "Invalid submission." }, 400); }
+    if (!name || !contact || !(file instanceof File) || !file.size) return json({ error: "Name, contact and an audio file are required." }, 400);
+    if (file.size > MAX_AUDIO_BYTES) return json({ error: "Audio file must be 50 MB or smaller." }, 413);
+    if (!AUDIO_TYPES.has(file.type)) return json({ error: "Upload an MP3, WAV, M4A, AAC or FLAC file." }, 415);
 
-      const clean = value => String(value ?? "").trim();
-      const name = clean(body.name).slice(0, 100);
-      const contact = clean(body.contact).slice(0, 160);
-      const artist = clean(body.artist).slice(0, 120);
-      const musicUrl = clean(body.music_url).slice(0, 500);
-      const note = clean(body.note).slice(0, 1000);
+    const safeName=(file.name||"track").replace(/[^a-zA-Z0-9._-]+/g,"-").slice(-120);
+    const key=`submissions/${new Date().toISOString().slice(0,10)}/${crypto.randomUUID()}-${safeName}`;
 
-      if (!name || !contact || !musicUrl) {
-        return json({ error: "Name, contact and music link are required." }, 400);
-      }
-
-      try {
-        const parsed = new URL(musicUrl);
-        if (!["http:", "https:"].includes(parsed.protocol)) throw new Error();
-      } catch {
-        return json({ error: "Please enter a valid music link." }, 400);
-      }
-
-      await env.DB.prepare(
-        "INSERT INTO submissions (name, contact, artist, music_url, note) VALUES (?, ?, ?, ?, ?)"
-      ).bind(name, contact, artist || null, musicUrl, note || null).run();
-
-      return json({ ok: true }, 201);
+    try {
+      await env.MUSIC.put(key,file.stream(),{httpMetadata:{contentType:file.type},customMetadata:{originalName:file.name}});
+      await env.DB.prepare("INSERT INTO submissions (name, contact, artist, music_key, music_filename, music_type, music_size, note) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")
+        .bind(name,contact,artist||null,key,file.name,file.type,file.size,note||null).run();
+      return json({ok:true},201);
+    } catch (error) {
+      await env.MUSIC.delete(key).catch(()=>{});
+      return json({error:"Could not save the submission. Please try again."},500);
     }
-
-    return env.ASSETS.fetch(request);
   }
 };
 
-function json(data, status = 200) {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: {
-      "content-type": "application/json; charset=utf-8",
-      "cache-control": "no-store",
-      "x-content-type-options": "nosniff"
-    }
-  });
-}
+function json(data,status=200){return new Response(JSON.stringify(data),{status,headers:{"content-type":"application/json; charset=utf-8","cache-control":"no-store","x-content-type-options":"nosniff"}})}
