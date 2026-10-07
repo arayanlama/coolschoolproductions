@@ -2053,3 +2053,31 @@ header nav a:hover,header nav a[aria-current="page"]{color:var(--accent)!importa
  .music-embed{max-width:none}
  .review-end{grid-template-columns:1fr;gap:38px;padding:56px 6vw 62px}
 }
+
+
+/* Consistent artist profile links */
+.artist-links{
+ max-width:760px;
+ display:flex;
+ align-items:center;
+ flex-wrap:wrap;
+ gap:0;
+ margin:38px 0 26px;
+ border-top:1px solid var(--hairline);
+ border-bottom:1px solid var(--hairline)
+}
+.artist-links span,.artist-links a{
+ font:8px Arial,sans-serif;
+ letter-spacing:.15em;
+ padding:14px 18px 14px 0;
+ margin-right:18px
+}
+.artist-links span{color:var(--stone)}
+.artist-links a{transition:color .2s ease}
+.artist-links a:hover{color:var(--accent)}
+.review-listen{margin-bottom:30px!important}
+@media(max-width:760px){
+ .artist-links{align-items:flex-start}
+ .artist-links span{width:100%;padding-bottom:5px}
+ .artist-links a{padding-top:9px;padding-bottom:13px}
+}
