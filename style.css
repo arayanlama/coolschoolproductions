@@ -1372,3 +1372,35 @@ header nav a[aria-current="page"]:after{content:"";position:absolute;left:0;righ
  .music-picks h2{font-size:clamp(40px,12vw,62px)}
  .music-post-end{flex-direction:column}
 }
+
+
+/* Modern editorial pass — inspired by contemporary music publishing, not UI trends */
+::selection{background:#0b0b0a;color:#f0ede5}
+header{transition:background .25s ease,box-shadow .25s ease}
+header nav a{transition:opacity .2s ease}
+header nav a:hover{opacity:.45}
+.hero-statement-body h1{max-width:8ch}
+.hero-statement-foot>a,.home-journal-top a,.home-journal-meta b{transition:transform .2s ease,opacity .2s ease}
+.hero-statement-foot>a:hover,.home-journal-top a:hover{opacity:.5}
+.artist-link figcaption{mix-blend-mode:difference}
+.home-journal{background:var(--cream);color:var(--black);padding:0 4vw;border-top:1px solid var(--line)}
+.home-journal-top{height:70px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-size:8px;letter-spacing:.18em}
+.home-journal-feature{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.45fr);gap:7vw;padding:clamp(65px,8vw,120px) 0;align-items:end}
+.home-journal-feature>div:first-child>span,.home-journal-meta>span{font-size:8px;letter-spacing:.18em;color:#77736b}
+.home-journal-feature h2{font-family:Georgia,serif;font-size:clamp(72px,9.5vw,150px);font-weight:400;line-height:.79;letter-spacing:-.072em;margin:40px 0 0}
+.home-journal-meta{border-top:1px solid var(--line);padding-top:17px}
+.home-journal-meta p{font-family:Georgia,serif;font-size:clamp(22px,2vw,30px);line-height:1.2;margin:45px 0 55px}
+.home-journal-meta b{display:block;font-size:8px;letter-spacing:.18em;font-weight:400}
+.home-journal-feature:hover .home-journal-meta b{transform:translate(4px,-2px)}
+@media(min-width:761px){
+ .opening-message .hero-statement-top{position:relative}
+ .home-journal-feature{min-height:68svh}
+}
+@media(max-width:760px){
+ .home-journal{padding:0 6vw}
+ .home-journal-top{height:62px}
+ .home-journal-feature{grid-template-columns:1fr;gap:58px;padding:64px 0 72px}
+ .home-journal-feature h2{font-size:clamp(62px,18vw,98px);margin-top:34px}
+ .home-journal-meta p{font-size:25px;margin:34px 0 42px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
