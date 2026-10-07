@@ -1548,3 +1548,23 @@ header nav a:hover{opacity:.45}
 @media(prefers-reduced-motion:reduce){
  .audio-record.playing:before,.audio-record.playing:after{animation:none!important}
 }
+
+
+/* Final Listen cleanup — neutralise legacy decorative metadata */
+#discover .discover-label:before,#discover .discover-label:after{content:none!important;display:none!important}
+#discover .discover-label{font-family:Arial,Helvetica,sans-serif!important;gap:0!important;text-shadow:none!important}
+#discover .discover-label span,#discover .discover-label b{font-family:Arial,Helvetica,sans-serif!important}
+@media(min-width:761px){
+ #discover.vinyl-discover{min-height:760px!important;height:min(82svh,860px)!important}
+ #discover .vinyl-audio-view{min-height:0!important;height:100%!important;padding:104px 6vw 62px!important}
+ #discover .audio-record-wrap{width:min(34vw,500px)!important}
+ #discover .audio-record{width:100%!important}
+ #discover .audio-deck{align-self:center!important}
+}
+#discover .audio-kicker{min-height:1em}
+#discover .audio-heading h2{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:680px){
+ #discover .discover-label{left:0!important;right:0!important;padding-inline:6vw!important}
+ #discover .discover-label b{display:block!important}
+ #discover .audio-heading h2{white-space:normal;overflow:visible}
+}
