@@ -3,7 +3,10 @@ CREATE TABLE IF NOT EXISTS submissions (
   name TEXT NOT NULL,
   contact TEXT NOT NULL,
   artist TEXT,
-  music_url TEXT NOT NULL,
+  music_key TEXT NOT NULL,
+  music_filename TEXT NOT NULL,
+  music_type TEXT NOT NULL,
+  music_size INTEGER NOT NULL,
   note TEXT,
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   status TEXT NOT NULL DEFAULT 'new'
