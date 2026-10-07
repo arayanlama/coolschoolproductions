@@ -1794,3 +1794,12 @@ header nav a:hover,header nav a[aria-current="page"]{color:var(--accent)!importa
  .submission-page-head h1{font-size:clamp(64px,18vw,100px);margin:55px 0 30px}
  .submission-page-form{padding-top:50px}
 }
+
+/* Audio upload control */
+.submission-upload{position:relative!important;cursor:pointer}
+.submission-upload input[type=file]{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;pointer-events:none}
+.submission-upload b{font:9px Arial,sans-serif;letter-spacing:.14em;font-weight:400;border:1px solid var(--ink);padding:12px 14px;width:max-content}
+.submission-upload small{font:8px Arial,sans-serif;letter-spacing:.12em;color:var(--stone);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.submission-upload:focus-within b,.submission-upload:hover b{background:var(--ink);color:var(--paper)}
+@media(min-width:761px){.submission-upload{grid-template-columns:150px max-content minmax(0,1fr)!important}}
+@media(max-width:760px){.submission-upload small{white-space:normal;line-height:1.5}}
