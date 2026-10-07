@@ -1343,3 +1343,32 @@ button,a{ -webkit-tap-highlight-color:transparent }
  .about-page-end h2{font-size:clamp(58px,17vw,90px);margin-bottom:48px}
  .about-page-end .cta-primary{width:100%}
 }
+
+
+/* 2026 site refinement — quieter, editorial, consistent */
+header nav a{position:relative}
+header nav a[aria-current="page"]:after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:1px;background:currentColor}
+.journal-art-placeholder{width:100%;height:100%;padding:9%;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start!important;font-family:Arial,Helvetica,sans-serif!important}
+.journal-art-placeholder span,.journal-art-placeholder small{font-size:8px;letter-spacing:.2em}
+.journal-art-placeholder b{font-family:Georgia,serif;font-size:clamp(48px,6vw,92px);font-weight:400;line-height:.82;letter-spacing:-.065em}
+.music-post{background:var(--cream);color:var(--black);padding:clamp(110px,13vw,190px) 4vw 7vw}
+.music-post-head>div{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:18px;font-size:8px;letter-spacing:.18em;color:#77736b}
+.music-post-head h1{font-family:Georgia,serif;font-size:clamp(76px,11vw,170px);font-weight:400;line-height:.78;letter-spacing:-.07em;margin:clamp(70px,9vw,125px) 0 38px}
+.music-post-head>p{font-family:Georgia,serif;font-size:clamp(18px,1.7vw,24px);color:#77736b;margin:0 0 clamp(70px,9vw,125px)}
+.music-picks{border-top:1px solid var(--line)}
+.music-picks article{display:grid;grid-template-columns:50px minmax(0,1fr) auto;gap:3vw;align-items:center;padding:clamp(36px,4vw,62px) 0;border-bottom:1px solid var(--line)}
+.music-picks article>span,.music-picks p,.music-picks small,.music-picks article>a{font-size:8px;letter-spacing:.17em}
+.music-picks article>span,.music-picks p,.music-picks small{color:#77736b}
+.music-picks p{margin:0 0 13px}
+.music-picks h2{font-family:Georgia,serif;font-size:clamp(38px,5vw,76px);font-weight:400;line-height:.9;letter-spacing:-.05em;margin:0 0 16px}
+.music-picks article>a{padding:14px 0;border-bottom:1px solid var(--black);white-space:nowrap}
+.music-post-end{display:flex;justify-content:space-between;gap:20px;padding-top:22px;margin-top:clamp(60px,8vw,110px);border-top:1px solid var(--line);font-size:8px;letter-spacing:.17em}
+@media(max-width:760px){
+ header nav a[aria-current="page"]:after{display:none}
+ .music-post{padding:92px 6vw 70px}
+ .music-post-head h1{font-size:clamp(66px,19vw,104px);margin-top:64px}
+ .music-picks article{grid-template-columns:30px 1fr;gap:18px;padding:38px 0}
+ .music-picks article>a{grid-column:2;width:max-content;margin-top:10px}
+ .music-picks h2{font-size:clamp(40px,12vw,62px)}
+ .music-post-end{flex-direction:column}
+}
