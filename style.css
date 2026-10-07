@@ -1766,3 +1766,67 @@ header nav a:hover,header nav a[aria-current="page"]{color:var(--accent)!importa
  0 0 0 1px rgba(128,66,71,.28),
  inset 0 0 0 1px rgba(241,236,226,.045)!important
 }
+
+
+/* Revision B — Raw Monochrome (final theme override) */
+:root{
+ --paper:#f4f3ef;
+ --paper-deep:#e9e8e4;
+ --ink:#090909;
+ --stone:#707070;
+ --stone-soft:#969696;
+ --hairline:#c9c9c5;
+ --accent:#090909;
+ --accent-deep:#090909;
+ --bronze:#b7b7b2;
+ --night:#090909;
+ --night-soft:#111111;
+ --night-text:#f2f1ed;
+ --night-muted:#a6a6a2;
+ --cream:var(--paper);
+ --black:var(--ink);
+ --grey:var(--stone);
+ --line:var(--hairline)
+}
+html,body{background:var(--paper);color:var(--ink)}
+header{background:rgba(244,243,239,.95)!important;color:var(--ink)!important;border-color:var(--hairline)!important}
+.brand small,header nav a:hover,header nav a[aria-current="page"]{color:var(--ink)!important}
+.opening-message{
+ background:linear-gradient(120deg,rgba(255,255,255,.38),transparent 35%),var(--paper)!important
+}
+.opening-message .hero-statement-top>span:last-child,
+.home-journal-top>span:first-child,.submission-only-label>span:first-child,
+.about-page-meta>span:first-child,.journal-simple-head>span,
+.full-hero>span,.legal-hero>p:first-child,
+.journal-art-placeholder small,.journal-post-info>span,
+.about-page-principles article>span,.full-grid article>span,.music-picks article>span{
+ color:var(--stone)!important
+}
+.home-journal-feature:hover .home-journal-meta b,
+.journal-post-link:hover .journal-post-info b,
+.submission-only-address a:hover,.simple-footer-links a:hover,
+.music-picks article>a:hover,.music-post a:hover,.legal-page a:hover{color:var(--ink)!important}
+.journal-post-cover{background:linear-gradient(145deg,rgba(0,0,0,.025),transparent 46%),var(--paper-deep)!important}
+.about-page-end,.site-footer.simple-footer{background:var(--ink)!important;color:var(--paper)!important}
+::selection{background:var(--ink);color:var(--paper)}
+
+/* Listening room — neutral black / silver */
+#discover.vinyl-discover{
+ background:
+ radial-gradient(circle at 22% 24%,rgba(255,255,255,.035),transparent 32%),
+ linear-gradient(145deg,var(--night-soft),var(--night) 62%,#050505)!important;
+ color:var(--night-text)!important
+}
+#discover .audio-kicker{color:#c2c2bd!important}
+#discover .audio-range{accent-color:#b7b7b2!important}
+#discover .audio-controls button:hover{
+ border-color:rgba(255,255,255,.5)!important;
+ background:rgba(255,255,255,.07)!important
+}
+#discover .audio-play{box-shadow:0 0 0 1px rgba(255,255,255,.06)}
+#discover .audio-record{
+ box-shadow:
+ 0 34px 90px rgba(0,0,0,.62),
+ 0 0 0 1px rgba(183,183,178,.24),
+ inset 0 0 0 1px rgba(244,243,239,.05)!important
+}
