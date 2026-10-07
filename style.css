@@ -1462,3 +1462,23 @@ header nav a:hover{opacity:.45}
  .home-journal{padding-inline:20px!important}
  .submit-contact{padding-left:20px!important;padding-right:20px!important}
 }
+
+
+/* Submission-only close — intentionally no CTA treatment */
+.submission-only{background:var(--cream);color:var(--black);padding:0 4vw clamp(80px,9vw,140px);border-top:1px solid var(--line)}
+.submission-only-label{height:70px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-size:8px;letter-spacing:.19em;color:#77736b}
+.submission-only-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.55fr);gap:8vw;align-items:end;padding-top:clamp(70px,9vw,130px)}
+.submission-only h2{font-family:Georgia,serif;font-size:clamp(78px,10vw,156px);font-weight:400;line-height:.78;letter-spacing:-.072em;margin:0}
+.submission-only-info{padding-top:18px;border-top:1px solid var(--line)}
+.submission-only-info>p{font-family:Georgia,serif;font-size:clamp(18px,1.55vw,23px);line-height:1.5;color:#77736b;margin:0 0 clamp(55px,6vw,85px);max-width:520px}
+.submission-only-address{border-top:1px solid var(--line);padding-top:16px}
+.submission-only-address span{display:block;font-size:8px;letter-spacing:.18em;color:#77736b;margin-bottom:16px}
+.submission-only-address a{font-family:Georgia,serif;font-size:clamp(17px,1.5vw,22px);overflow-wrap:anywhere;border:0}
+@media(max-width:760px){
+ .submission-only{padding:0 6vw 78px}
+ .submission-only-label{height:62px}
+ .submission-only-grid{grid-template-columns:1fr;gap:56px;padding-top:64px}
+ .submission-only h2{font-size:clamp(64px,18vw,100px)}
+ .submission-only-info>p{font-size:18px;margin-bottom:48px}
+ .submission-only-address a{font-size:17px}
+}
