@@ -2165,3 +2165,87 @@ html{scroll-behavior:smooth}
  .review-index a{border-left:0;border-top:1px solid var(--hairline)}
  .review-index a:hover,.review-index a.is-active{padding-left:10px}
 }
+
+
+/* Journal clean interactive edition */
+.review-post{overflow:clip}
+.review-hero{padding-bottom:clamp(54px,6vw,88px)!important}
+.review-intro{align-items:end!important}
+.review-index{
+ position:sticky;
+ top:0;
+ z-index:20;
+ background:rgba(241,236,226,.94);
+ backdrop-filter:blur(14px);
+ -webkit-backdrop-filter:blur(14px);
+}
+.review-track{
+ position:relative;
+ padding-top:clamp(68px,8vw,116px)!important;
+ padding-bottom:clamp(72px,9vw,128px)!important;
+ transition:background .3s ease;
+}
+.review-track-no{position:sticky;top:72px;align-self:start}
+.review-track-body{max-width:920px}
+.review-track-body>p{max-width:760px}
+.artist-links{margin:32px 0 34px!important}
+.artist-links span{margin-right:auto!important}
+.music-embed{
+ position:relative;
+ margin-top:0!important;
+ border:1px solid var(--hairline);
+ background:var(--night);
+ box-shadow:0 14px 38px rgba(21,17,15,.08);
+ transition:transform .35s ease,box-shadow .35s ease;
+}
+.music-embed:hover{transform:translateY(-3px);box-shadow:0 22px 48px rgba(21,17,15,.13)}
+.music-embed iframe{display:block;width:100%;aspect-ratio:16/9;height:auto;border:0}
+.video-label{
+ position:absolute;
+ z-index:2;
+ top:12px;
+ right:12px;
+ padding:7px 9px;
+ background:rgba(16,13,13,.72);
+ color:#f0e7dc;
+ font:7px Arial,sans-serif;
+ letter-spacing:.16em;
+ pointer-events:none;
+ opacity:0;
+ transform:translateY(-4px);
+ transition:opacity .2s ease,transform .2s ease;
+}
+.music-embed:hover .video-label{opacity:1;transform:none}
+.review-end{margin-top:0!important}
+@media(max-width:760px){
+ .review-hero{padding-bottom:44px!important}
+ .review-index{
+  top:0;
+  display:flex!important;
+  overflow-x:auto;
+  white-space:nowrap;
+  scrollbar-width:none;
+  margin:0!important;
+  padding:0 20px;
+ }
+ .review-index::-webkit-scrollbar{display:none}
+ .review-index span{display:none}
+ .review-index a{
+  flex:0 0 auto;
+  padding:14px 16px!important;
+  border-top:0!important;
+  border-left:1px solid var(--hairline)!important;
+ }
+ .review-index a:first-of-type{border-left:0!important;padding-left:0!important}
+ .review-index a:hover,.review-index a.is-active{padding-left:16px!important}
+ .review-track{padding-top:56px!important;padding-bottom:72px!important}
+ .review-track-no{position:static!important}
+ .artist-links{margin:26px 0 28px!important}
+ .music-embed:hover{transform:none}
+ .video-label{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .music-embed,.video-label{transition:none!important}
+ .music-embed:hover{transform:none}
+}
