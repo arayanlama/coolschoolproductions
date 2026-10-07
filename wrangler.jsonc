@@ -1,14 +1,21 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "coolschoolproductions",
+  "main": "worker.js",
   "compatibility_date": "2026-09-28",
-  "assets": { "directory": "." },
+  "assets": { "directory": ".", "binding": "ASSETS" },
   "previews": {},
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "coolschool-submissions",
       "database_id": "REPLACE_WITH_D1_DATABASE_ID"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MUSIC",
+      "bucket_name": "coolschool-submissions-music"
     }
   ]
 }
