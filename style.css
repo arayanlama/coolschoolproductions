@@ -2094,3 +2094,9 @@ header nav a:hover,header nav a[aria-current="page"]{color:var(--accent)!importa
  .review-byline{align-items:flex-start}
  .review-end>div small{max-width:260px}
 }
+
+
+/* Submission fallback — visible only as a quiet safety route */
+.submission-fallback{margin:12px 0 0!important;font:8px/1.5 Arial,sans-serif!important;letter-spacing:.12em!important;color:var(--stone)!important}
+.submission-fallback a{border-bottom:1px solid var(--hairline);padding-bottom:3px}
+.submission-fallback a:hover{color:var(--accent)}
