@@ -1980,3 +1980,35 @@ header nav a:hover,header nav a[aria-current="page"]{color:var(--accent)!importa
  .journal-close p{font-size:32px}
  .journal-close a{width:max-content}
 }
+
+
+/* Journal cleanup — quieter hierarchy, less filler */
+.journal-mast{padding-bottom:clamp(60px,6.5vw,96px)!important}
+.journal-mast-title{padding-top:clamp(58px,6.5vw,92px)!important}
+.journal-mast-title p{max-width:340px}
+.journal-featured{min-height:70svh!important}
+.journal-feature-image{min-height:590px!important}
+.journal-feature-copy{padding-top:4vw!important;padding-bottom:4vw!important}
+.journal-feature-copy h2{font-size:clamp(70px,7.6vw,120px)!important}
+.journal-feature-copy>p{margin-bottom:46px!important}
+.journal-feature-footer span{max-width:320px}
+.journal-desk{padding-bottom:clamp(70px,7vw,108px)!important}
+.journal-desk-grid{padding-top:clamp(56px,6vw,88px)!important}
+.journal-desk h3{margin-top:0!important}
+.journal-desk-images{height:360px!important}
+.journal-close{
+ grid-template-columns:1fr auto!important;
+ padding-top:58px!important;
+ padding-bottom:58px!important
+}
+.journal-close p{font-size:clamp(38px,4.5vw,66px)!important;letter-spacing:-.045em}
+@media(max-width:760px){
+ .journal-mast{padding-bottom:54px!important}
+ .journal-mast-title{padding-top:52px!important;gap:34px!important}
+ .journal-feature-image{min-height:54svh!important}
+ .journal-feature-copy{min-height:0!important;padding-top:52px!important;padding-bottom:56px!important}
+ .journal-feature-copy h2{margin:52px 0 24px!important}
+ .journal-desk-grid{padding-top:52px!important}
+ .journal-desk-images{height:250px!important}
+ .journal-close{grid-template-columns:1fr!important;padding-top:48px!important;padding-bottom:50px!important;gap:34px!important}
+}
