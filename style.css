@@ -1568,3 +1568,25 @@ header nav a:hover{opacity:.45}
  #discover .discover-label b{display:block!important}
  #discover .audio-heading h2{white-space:normal;overflow:visible}
 }
+
+
+/* Readability pass — preserve hierarchy, remove overly faint microcopy */
+.opening-message .kicker,.opening-message .hero-statement-top>span{color:#68645d!important;font-size:9px!important}
+.opening-message .prayer{color:#77736b!important;opacity:1!important}
+#discover .discover-label span{color:#eee7d8!important;font-size:9px!important}
+#discover .discover-label b{color:#aaa08e!important;font-size:9px!important}
+#discover .audio-record-wrap:before,#discover .audio-record-wrap:after{color:#aaa08e!important;font-size:7px!important;opacity:1!important}
+#discover .audio-kicker{color:#c9bda7!important;font-size:9px!important}
+#discover .audio-subtitle,#discover .playing-badge,#discover .audio-track-count,#discover .audio-time{color:#aaa08e!important;font-size:8px!important}
+#discover .audio-deck h2{color:#f0e7d5!important}
+#discover .audio-range{opacity:.9!important}
+.home-journal-top,.home-journal-feature>div:first-child>span,.home-journal-meta>span{font-size:9px!important;color:#68645d!important}
+.submission-only-label,.submission-only-address span{font-size:9px!important;color:#68645d!important}
+.simple-footer-meta,.simple-footer-links{font-size:9px!important}
+@media(max-width:760px){
+ .opening-message .kicker,.opening-message .hero-statement-top>span,
+ #discover .discover-label span,#discover .discover-label b,
+ .home-journal-top,.submission-only-label{font-size:9px!important}
+ #discover .audio-kicker{font-size:9px!important}
+ #discover .audio-subtitle,#discover .playing-badge,#discover .audio-track-count,#discover .audio-time{font-size:9px!important}
+}
