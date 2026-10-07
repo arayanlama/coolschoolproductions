@@ -2135,3 +2135,33 @@ header nav a:hover,header nav a[aria-current="page"]{color:var(--accent)!importa
   letter-spacing:-.04em;
 }
 .youtube-search-figure small{color:rgba(240,231,220,.72)}
+
+
+/* Journal interaction pass */
+html{scroll-behavior:smooth}
+.reading-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:1000;pointer-events:none}
+.reading-progress span{display:block;width:0;height:100%;background:var(--accent);transition:width .08s linear}
+.review-index{
+ display:grid;
+ grid-template-columns:1.15fr repeat(3,1fr);
+ border-top:1px solid var(--hairline);
+ border-bottom:1px solid var(--hairline);
+ margin:0 clamp(22px,5vw,72px);
+}
+.review-index span,.review-index a{
+ padding:18px 16px;
+ font:8px Arial,sans-serif;
+ letter-spacing:.15em;
+}
+.review-index span{padding-left:0;color:var(--stone)}
+.review-index a{border-left:1px solid var(--hairline);transition:background .2s ease,color .2s ease}
+.review-index a:hover,.review-index a.is-active{background:var(--accent);color:var(--paper)}
+.review-track{scroll-margin-top:82px}
+.review-track-body h2{transition:color .2s ease}
+.review-track:target .review-track-body h2{color:var(--accent)}
+@media(max-width:760px){
+ .review-index{grid-template-columns:1fr;margin:0 20px}
+ .review-index span,.review-index a{padding:13px 0}
+ .review-index a{border-left:0;border-top:1px solid var(--hairline)}
+ .review-index a:hover,.review-index a.is-active{padding-left:10px}
+}
