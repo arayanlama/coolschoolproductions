@@ -1404,3 +1404,61 @@ header nav a:hover{opacity:.45}
  .home-journal-meta p{font-size:25px;margin:34px 0 42px}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+
+/* Premium listening + mobile composition */
+.vinyl-discover{min-height:92svh!important;height:auto!important;padding:0!important;background:#090908!important}
+.vinyl-discover .discover-label{position:absolute!important;z-index:8!important;top:0!important;left:0!important;right:0!important;height:64px!important;padding:0 4vw!important;border:0!important;border-bottom:1px solid rgba(255,255,255,.14)!important;background:transparent!important;display:flex!important;align-items:center!important;justify-content:space-between!important;backdrop-filter:none!important;color:#e7e2d8!important}
+.vinyl-discover .discover-label span,.vinyl-discover .discover-label b{font-size:8px!important;letter-spacing:.19em!important;font-weight:400!important}
+.vinyl-discover .discover-label b{color:#77736b}
+.vinyl-audio-view{min-height:92svh!important;padding:120px 6vw 72px!important;display:grid!important;grid-template-columns:minmax(300px,.8fr) minmax(360px,1fr)!important;gap:9vw!important;align-items:center!important;max-width:1500px!important;margin:auto!important}
+.audio-record-wrap{width:min(40vw,560px)!important;margin:0!important}
+.audio-record{box-shadow:0 30px 100px rgba(0,0,0,.5)!important}
+.audio-deck{width:100%!important;max-width:650px!important}
+.audio-kicker{font-size:8px!important;letter-spacing:.2em!important;color:#777!important;margin-bottom:36px!important}
+.audio-heading{padding-bottom:30px!important;border-bottom:1px solid rgba(255,255,255,.16)!important}
+.audio-deck h2{font-size:clamp(54px,6vw,92px)!important;line-height:.86!important;letter-spacing:-.06em!important}
+.playing-badge{border:0!important;padding:0!important;color:#777!important}
+.audio-progress{margin-top:34px!important}
+.audio-bottom{margin-top:28px!important}
+.audio-controls{gap:8px!important}
+.audio-controls button{border:1px solid rgba(255,255,255,.18)!important;background:transparent!important;color:#e7e2d8!important}
+.audio-controls .audio-play{width:58px!important;height:58px!important}
+.audio-track-count{font-size:8px!important;letter-spacing:.18em!important;color:#777!important}
+.submit-contact{border-top:1px solid var(--line)}
+.submit-contact-grid{padding-top:clamp(58px,7vw,100px)!important}
+.submit-contact-copy h2{font-size:clamp(70px,8.4vw,132px)!important}
+.submit-contact-actions{align-self:end}
+@media(max-width:760px){
+ body{font-size:16px}
+ header{backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+ .opening-mark{height:68svh!important;min-height:470px!important}
+ .showcase-hint{top:14px!important;left:16px!important;right:16px!important}
+ .hero-track figcaption{left:20px!important;bottom:22px!important;font-size:34px!important}
+ .opening-message{padding-top:54px!important;padding-bottom:64px!important}
+ .opening-message .hero-statement-body{padding-top:58px!important}
+ .opening-message .hero-statement-body h1{font-size:clamp(62px,18vw,92px)!important;margin-bottom:34px!important}
+ .vinyl-discover{min-height:0!important}
+ .vinyl-discover .discover-label{height:58px!important;padding:0 6vw!important}
+ .vinyl-audio-view{min-height:0!important;padding:104px 6vw 72px!important;grid-template-columns:1fr!important;gap:58px!important}
+ .audio-record-wrap{width:min(78vw,340px)!important;margin:auto!important}
+ .audio-deck{max-width:none!important}
+ .audio-kicker{margin-bottom:25px!important}
+ .audio-deck h2{font-size:clamp(48px,14vw,68px)!important}
+ .audio-heading{align-items:end!important}
+ .audio-subtitle{line-height:1.5!important}
+ .audio-controls button{min-width:48px!important;min-height:48px!important}
+ .audio-controls .audio-play{width:58px!important;height:58px!important}
+ .home-journal-feature{min-height:0}
+ .submit-contact-grid{padding-top:58px!important;gap:54px!important}
+ .submit-contact-copy h2{font-size:clamp(62px,17vw,96px)!important}
+ .submit-contact-email b{font-size:15px!important}
+ .simple-footer{padding-top:54px!important}
+}
+@media(max-width:390px){
+ .opening-mark{height:62svh!important;min-height:430px!important}
+ .vinyl-audio-view{padding-left:20px!important;padding-right:20px!important}
+ .audio-record-wrap{width:min(82vw,310px)!important}
+ .home-journal{padding-inline:20px!important}
+ .submit-contact{padding-left:20px!important;padding-right:20px!important}
+}
