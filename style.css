@@ -1803,3 +1803,49 @@ header nav a:hover,header nav a[aria-current="page"]{color:var(--accent)!importa
 .submission-upload:focus-within b,.submission-upload:hover b{background:var(--ink);color:var(--paper)}
 @media(min-width:761px){.submission-upload{grid-template-columns:150px max-content minmax(0,1fr)!important}}
 @media(max-width:760px){.submission-upload small{white-space:normal;line-height:1.5}}
+
+
+/* Negative-space composition pass */
+@media(min-width:900px){
+ .submission-only{padding-bottom:clamp(76px,7vw,108px)!important}
+ .submission-only-grid{
+  grid-template-columns:minmax(0,1.08fr) minmax(440px,.72fr)!important;
+  gap:clamp(70px,8vw,140px)!important;
+  padding-top:clamp(64px,7vw,96px)!important;
+  align-items:center!important
+ }
+ .submission-only h2{
+  font-size:clamp(78px,9.2vw,142px)!important;
+  max-width:6.2ch
+ }
+ .submission-only-info{
+  align-self:center!important;
+  padding-top:22px!important;
+  max-width:620px
+ }
+ .submission-only-info>p{
+  margin:0 0 34px!important;
+  max-width:none!important
+ }
+ .submission-form{margin-top:0!important}
+ .submission-form label{padding:13px 0!important}
+ .submission-form button{margin-top:22px!important}
+
+ .home-journal-feature{
+  grid-template-columns:minmax(0,1.35fr) minmax(300px,.42fr)!important;
+  gap:clamp(80px,9vw,150px)!important
+ }
+ .home-journal-meta{align-self:end}
+
+ .about-page-story,.about-page-principles,.legal-copy article{
+  column-gap:clamp(70px,8vw,140px)!important
+ }
+}
+@media(min-width:1200px){
+ .submission-only-grid,.home-journal-feature{max-width:1500px;margin-inline:auto}
+}
+@media(max-width:760px){
+ .submission-only-grid{gap:42px!important}
+ .submission-only-info>p{margin-bottom:26px!important}
+ .submission-form{margin-top:0!important}
+}
